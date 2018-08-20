@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-21 00:26:09" itemprop="dateModified" datetime="2018-08-21T00:26:09+08:00">2018-08-21</time>
+                <time title="Modified: 2018-08-21 00:33:01" itemprop="dateModified" datetime="2018-08-21T00:33:01+08:00">2018-08-21</time>
               
             
           </span>
@@ -376,13 +376,10 @@
         
           
             <h3 id="Submission-3"><a href="#Submission-3" class="headerlink" title="Submission 3"></a>Submission 3</h3><ul>
-<li>使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。<br>‘’’<br>class Solution {<br>public:<br>  int removeDuplicates(vector<int>&amp; nums) {<pre><code>nums.erase(unique(nums.begin(),nums.end()),nums.end());
-return nums.size();
-</code></pre>  }<br>};<br>‘’’</int></li>
+<li>使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        nums.erase(unique(nums.begin(),nums.end()),nums.end());</span><br><span class="line">        return nums.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="Submission-5"><a href="#Submission-5" class="headerlink" title="Submission 5"></a>Submission 5</h3><p>*先判断长度是否为0比后判断，速度更快<br>‘’’<br>class Solution {<br>public:<br>    int removeDuplicates(vector<int>&amp; nums) {<br>        int i = 0;<br>        if (nums.size()==0) {<br>            return 0;<br>        }<br>        else{<br>            for(int j=1;j&lt;nums.size();j++){<br>                if (nums[j]!=nums[i]){<br>                    nums[++i]=nums[j];<br>                }<br>            }<br>            return i+1;<br>        }</int></p>
-<pre><code>}
-</code></pre><p>};<br>‘’’</p>
+<h3 id="Submission-5"><a href="#Submission-5" class="headerlink" title="Submission 5"></a>Submission 5</h3><p>*先判断长度是否为0比后判断，速度更快<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int i = 0;</span><br><span class="line">        if (nums.size()==0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            for(int j=1;j&lt;nums.size();j++)&#123;</span><br><span class="line">                if (nums[j]!=nums[i])&#123;</span><br><span class="line">                    nums[++i]=nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return i+1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
           
         
