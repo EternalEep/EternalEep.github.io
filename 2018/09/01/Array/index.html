@@ -108,20 +108,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="EternalEep">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="该题的整个多种方法解题思路见链接 Submission 3 Using Extra Array 该方法使用了额外的空间，我只存储了数组的前k个数字，剩下的直接右移动k位以后，再将前k个移到数组中的相应位置，至于为什么要先额外存储前k个，因为我们知道，这样将不会丢失数组的原始元素。1234567891011121314151617181920212223242526class Solution &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/Array/index.html">
 <meta property="og:site_name" content="EternalEep">
+<meta property="og:description" content="该题的整个多种方法解题思路见链接 Submission 3 Using Extra Array 该方法使用了额外的空间，我只存储了数组的前k个数字，剩下的直接右移动k位以后，再将前k个移到数组中的相应位置，至于为什么要先额外存储前k个，因为我们知道，这样将不会丢失数组的原始元素。1234567891011121314151617181920212223242526class Solution &amp;#">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-01T06:28:06.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EternalEep">
+<meta name="twitter:title" content="Array">
+<meta name="twitter:description" content="该题的整个多种方法解题思路见链接 Submission 3 Using Extra Array 该方法使用了额外的空间，我只存储了数组的前k个数字，剩下的直接右移动k位以后，再将前k个移到数组中的相应位置，至于为什么要先额外存储前k个，因为我们知道，这样将不会丢失数组的原始元素。1234567891011121314151617181920212223242526class Solution &amp;#">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/Array/"/>
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>EternalEep</title>
+  <title>Array | EternalEep</title>
   
 
 
@@ -178,8 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,7 +219,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
@@ -260,9 +263,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -294,11 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/Array/" itemprop="url">
-                  Array
-                </a>
+          <h1 class="post-title" itemprop="name headline">Array
               
             
           </h1>
@@ -361,9 +360,7 @@
       
 
       
-        
-          
-            <p>该题的整个多种方法解题思路见<a href="https://leetcode.com/problems/rotate-array/solution/" target="_blank" rel="noopener">链接</a></p>
+        <p>该题的整个多种方法解题思路见<a href="https://leetcode.com/problems/rotate-array/solution/" target="_blank" rel="noopener">链接</a></p>
 <h3 id="Submission-3"><a href="#Submission-3" class="headerlink" title="Submission 3"></a>Submission 3</h3><ul>
 <li>Using Extra Array<ul>
 <li>该方法使用了额外的空间，我只存储了数组的前k个数字，剩下的直接右移动k位以后，再将前k个移到数组中的相应位置，至于为什么要先额外存储前k个，因为我们知道，这样将不会丢失数组的原始元素。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(k==len)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(k&lt;len)&#123;</span><br><span class="line">            <span class="keyword">int</span> *a = <span class="keyword">new</span> <span class="keyword">int</span>[len-k];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(len-k);i++)&#123;</span><br><span class="line">                *(a+i)=nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=(len-k);j&lt;len;j++)</span><br><span class="line">                nums[(j+k)%len]=nums[j];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> p=<span class="number">0</span>;p&lt;(len-k);p++)</span><br><span class="line">                nums[p+k]=*(a+p);</span><br><span class="line">            <span class="keyword">delete</span> []a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(k&gt;len)&#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a = nums;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">                nums[(i+k)%len] = a[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;               </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -394,8 +391,6 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
 
@@ -415,153 +410,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/II/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Weiwen Yi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EternalEep">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/25/II/" itemprop="url">
-                  Leetcode122-Best Time to Buy and Sell Stock II
-                </a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/08/25/II/" rel="next" title="Leetcode122-Best Time to Buy and Sell Stock II">
+                <i class="fa fa-chevron-left"></i> Leetcode122-Best Time to Buy and Sell Stock II
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-25 22:48:34 / Modified: 22:56:24" itemprop="dateCreated datePublished" datetime="2018-08-25T22:48:34+08:00">2018-08-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="Submission-1"><a href="#Submission-1" class="headerlink" title="Submission 1"></a>Submission 1</h3><p>如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润。<br><em>例如[1, 7, 2, 3, 6, 7, 6, 7]
-    </em>(3-2)+(6-3)+(7-6)=7-2=5<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -571,317 +441,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Weiwen Yi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EternalEep">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/" itemprop="url">
-                  Leetcode26-Remove Duplicates from Sorted Array
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-20 00:13:08" itemprop="dateCreated datePublished" datetime="2018-08-20T00:13:08+08:00">2018-08-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-01 14:05:53" itemprop="dateModified" datetime="2018-09-01T14:05:53+08:00">2018-09-01</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Submission-3"><a href="#Submission-3" class="headerlink" title="Submission 3"></a>Submission 3</h3><ul>
-<li>使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        nums.erase(unique(nums.begin(),nums.end()),nums.end());</span><br><span class="line">        <span class="keyword">return</span> nums.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Submission-5"><a href="#Submission-5" class="headerlink" title="Submission 5"></a>Submission 5</h3><ul>
-<li>先判断长度是否为0比后判断，速度更快</li>
-<li>因为最终只要返回不重复元素的长度，程序会自动返回前n个长度的数组，直接统计不重复元素个数，并且将不重复元素前移，注意审题。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums.size()==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;nums.size();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[j]!=nums[i])&#123;</span><br><span class="line">                    nums[++i]=nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Weiwen Yi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EternalEep">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/14/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-14 13:54:48" itemprop="dateCreated datePublished" datetime="2018-08-14T13:54:48+08:00">2018-08-14</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -902,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -948,6 +525,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-3"><span class="nav-number">1.</span> <span class="nav-text">Submission 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-4"><span class="nav-number">2.</span> <span class="nav-text">Submission 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-5"><span class="nav-number">3.</span> <span class="nav-text">Submission 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-6"><span class="nav-number">4.</span> <span class="nav-text">Submission 6</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1085,6 +678,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 
