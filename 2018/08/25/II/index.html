@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="Submission 1如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润。例如[1, 7, 2, 3, 6, 7, 6, 7]     (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfi">
+  <meta name="description" content="Submission 1 如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润 例如[1, 7, 2, 3, 6, 7, 6, 7] (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfit(v">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode122-Best Time to Buy and Sell Stock II">
 <meta property="og:url" content="http://yoursite.com/2018/08/25/II/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Submission 1如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润。例如[1, 7, 2, 3, 6, 7, 6, 7]     (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfi">
+<meta property="og:description" content="Submission 1 如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润 例如[1, 7, 2, 3, 6, 7, 6, 7] (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfit(v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-25T14:56:24.160Z">
+<meta property="og:updated_time" content="2018-09-01T11:17:21.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode122-Best Time to Buy and Sell Stock II">
-<meta name="twitter:description" content="Submission 1如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润。例如[1, 7, 2, 3, 6, 7, 6, 7]     (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfi">
+<meta name="twitter:description" content="Submission 1 如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润 例如[1, 7, 2, 3, 6, 7, 6, 7] (3-2)+(6-3)+(7-6)=7-2=51234567891011121314151617181920class Solution &amp;#123;public:    int maxProfit(v">
 
 
 
@@ -322,12 +322,24 @@
                 
               
 
-              <time title="Created: 2018-08-25 22:48:34 / Modified: 22:56:24" itemprop="dateCreated datePublished" datetime="2018-08-25T22:48:34+08:00">2018-08-25</time>
+              <time title="Created: 2018-08-25 22:48:34" itemprop="dateCreated datePublished" datetime="2018-08-25T22:48:34+08:00">2018-08-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 19:17:21" itemprop="dateModified" datetime="2018-09-01T19:17:21+08:00">2018-09-01</time>
               
             
           </span>
@@ -360,8 +372,26 @@
       
 
       
-        <h3 id="Submission-1"><a href="#Submission-1" class="headerlink" title="Submission 1"></a>Submission 1</h3><p>如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润。<br><em>例如[1, 7, 2, 3, 6, 7, 6, 7]
-    </em>(3-2)+(6-3)+(7-6)=7-2=5<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="Submission-1"><a href="#Submission-1" class="headerlink" title="Submission 1"></a>Submission 1</h3><ul>
+<li>如果第二个数是大于前一个数的，将其加入profit，从头到尾遍历该数组，最后所得profit即为我们所需要的最大利润<ul>
+<li>例如[1, 7, 2, 3, 6, 7, 6, 7]<ul>
+<li>(3-2)+(6-3)+(7-6)=7-2=5<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Submission-2"><a href="#Submission-2" class="headerlink" title="Submission 2"></a>Submission 2</h3><ul>
+<li>寻找连续的peak及value值，需要注意的几个点有：<ol>
+<li>i从0开始，并且小于数组长度-1</li>
+<li>prices[i]&gt;=prices[i+1]</li>
+<li>prices[i]&lt;=prices[i+1]</li>
+<li>需要注意等号,否则测试用例{3,3}，i不增长，一直跳不出外层while循环</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span> &amp;&amp; prices[i]&gt;=prices[i+<span class="number">1</span>])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            valley = prices[i];</span><br><span class="line">            <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span> &amp;&amp; prices[i]&lt;=prices[i+<span class="number">1</span>])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            peak = prices[i];</span><br><span class="line">            profit+=(peak-valley);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -511,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-1"><span class="nav-number">1.</span> <span class="nav-text">Submission 1</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-1"><span class="nav-number">1.</span> <span class="nav-text">Submission 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-2"><span class="nav-number">2.</span> <span class="nav-text">Submission 2</span></a></li></ol></div>
             
 
           </div>
