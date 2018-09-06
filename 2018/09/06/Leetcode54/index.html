@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Submission 3 使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。1234567class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
+  <meta name="description" content="Solution Some tips to notify matrix.size is zero Using layer-by-layer approach, the k-th layer has minimum distance to boader equak to k for each outer layer, iterate through elements in clockwise pay">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode26-Remove Duplicates from Sorted Array">
-<meta property="og:url" content="http://yoursite.com/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/index.html">
+<meta property="og:title" content="Leetcode54-Spiral Matrix">
+<meta property="og:url" content="http://yoursite.com/2018/09/06/Leetcode54/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Submission 3 使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。1234567class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
+<meta property="og:description" content="Solution Some tips to notify matrix.size is zero Using layer-by-layer approach, the k-th layer has minimum distance to boader equak to k for each outer layer, iterate through elements in clockwise pay">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T06:05:53.076Z">
+<meta property="og:updated_time" content="2018-09-06T15:56:41.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode26-Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="Submission 3 使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。1234567class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
+<meta name="twitter:title" content="Leetcode54-Spiral Matrix">
+<meta name="twitter:description" content="Solution Some tips to notify matrix.size is zero Using layer-by-layer approach, the k-th layer has minimum distance to boader equak to k for each outer layer, iterate through elements in clockwise pay">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/06/Leetcode54/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode26-Remove Duplicates from Sorted Array | EternalEep</title>
+  <title>Leetcode54-Spiral Matrix | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Leetcode54/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode26-Remove Duplicates from Sorted Array
+          <h1 class="post-title" itemprop="name headline">Leetcode54-Spiral Matrix
               
             
           </h1>
@@ -322,24 +322,12 @@
                 
               
 
-              <time title="Created: 2018-08-20 00:13:08" itemprop="dateCreated datePublished" datetime="2018-08-20T00:13:08+08:00">2018-08-20</time>
+              <time title="Created: 2018-09-06 23:42:35 / Modified: 23:56:41" itemprop="dateCreated datePublished" datetime="2018-09-06T23:42:35+08:00">2018-09-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-01 14:05:53" itemprop="dateModified" datetime="2018-09-01T14:05:53+08:00">2018-09-01</time>
               
             
           </span>
@@ -372,13 +360,16 @@
       
 
       
-        <h3 id="Submission-3"><a href="#Submission-3" class="headerlink" title="Submission 3"></a>Submission 3</h3><ul>
-<li>使用unique函数：去重函数，去除相邻重复元素(保留一个)，把重复的元素后移动了，依然保存在原数组中，返回去重后最后一个元素的地址。由于去除相邻重复元素，一般用之前需要排序。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        nums.erase(unique(nums.begin(),nums.end()),nums.end());</span><br><span class="line">        <span class="keyword">return</span> nums.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ul>
+<li>Some tips to notify<ul>
+<li>matrix.size is zero</li>
+<li>Using layer-by-layer approach, the k-th layer has minimum distance to boader equak to k</li>
+<li>for each outer layer, iterate through elements in clockwise</li>
+<li>pay attention to the specific situation such as only a line/column print<br><strong> top-left coordinates(r1,c1)
+</strong> bottom-right coordinates(r2,c2)<br>| top    | c from c1,…,c2-1   |<br>|——–|———————-|<br>| right  | r from r1+1,…,r2-2 |<br>| bottom | c from c2-1,…,c1+1 |<br>| left   | r from r2-1,…,r1+1 |<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; spiralOrder(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; spiral;</span><br><span class="line">        <span class="keyword">if</span>(matrix.size()==<span class="number">0</span>) <span class="keyword">return</span> spiral;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> r1 = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> c1 = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> r2 = matrix.size();</span><br><span class="line">            <span class="keyword">int</span> c2 = matrix[<span class="number">0</span>].size();</span><br><span class="line">            <span class="keyword">int</span> bound = r2*c2;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(cnt&lt;bound) &#123;</span><br><span class="line">                <span class="comment">// Only a line with 1*c2 size</span></span><br><span class="line">                <span class="keyword">if</span> (r1 == (r2<span class="number">-1</span>)) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> c=c1; c&lt;c2; c++)&#123;</span><br><span class="line">                        spiral.push_back(matrix[r1][c]);</span><br><span class="line">                        cnt++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// Only a column with r2*1 size</span></span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(c1 == (c2<span class="number">-1</span>))&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> r=r1; r&lt;r2; r++)&#123;</span><br><span class="line">                        spiral.push_back(matrix[r][c1]);</span><br><span class="line">                        cnt++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// line and column with r2*c2 size</span></span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// The first line should be printed completely.</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                        spiral.push_back(matrix[r1][c]);</span><br><span class="line">                        cnt++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> r = r1+<span class="number">1</span>; r &lt; r2 - <span class="number">1</span>; r++) &#123;</span><br><span class="line">                            spiral.push_back(matrix[r][c2 - <span class="number">1</span>]);</span><br><span class="line">                            cnt++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> c = c2 - <span class="number">1</span>; c &gt; c1; c--) &#123;</span><br><span class="line">                            spiral.push_back(matrix[r2 - <span class="number">1</span>][c]);</span><br><span class="line">                            cnt++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> r = r2 - <span class="number">1</span>; r &gt; r1; r--) &#123;</span><br><span class="line">                            spiral.push_back(matrix[r][c1]);</span><br><span class="line">                            cnt++;</span><br><span class="line">                        &#125;</span><br><span class="line">                        r1++;</span><br><span class="line">                        c1++;</span><br><span class="line">                        r2--;</span><br><span class="line">                        c2--;</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> spiral;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="Submission-5"><a href="#Submission-5" class="headerlink" title="Submission 5"></a>Submission 5</h3><ul>
-<li>先判断长度是否为0比后判断，速度更快</li>
-<li>因为最终只要返回不重复元素的长度，程序会自动返回前n个长度的数组，直接统计不重复元素个数，并且将不重复元素前移，注意审题。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums.size()==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;nums.size();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[j]!=nums[i])&#123;</span><br><span class="line">                    nums[++i]=nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
 
       
@@ -407,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/09/06/Leetcode350/" rel="next" title="Leetcode350-Intersection of Two Arrays II">
+                <i class="fa fa-chevron-left"></i> Leetcode350-Intersection of Two Arrays II
               </a>
             
           </div>
@@ -417,8 +408,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/25/II/" rel="prev" title="Leetcode122-Best Time to Buy and Sell Stock II">
-                Leetcode122-Best Time to Buy and Sell Stock II <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/06/Leetcode59/" rel="prev" title="Leetcode59-Spiral Matrix II">
+                Leetcode59-Spiral Matrix II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,7 +520,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-3"><span class="nav-number">1.</span> <span class="nav-text">Submission 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submission-5"><span class="nav-number">2.</span> <span class="nav-text">Submission 5</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
 
           </div>
