@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Some tips to notify n is zero, return initial matrix two dimensional vector initialize with size vector&amp;lt;vector&amp;gt; spiral (n,vector(n,0)); when matrix spiral, the element is updated by (cn">
+  <meta name="description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode59-Spiral Matrix II">
-<meta property="og:url" content="http://yoursite.com/2018/09/06/Leetcode59/index.html">
+<meta property="og:title" content="Leetcode387 - First Unique Character in a String">
+<meta property="og:url" content="http://yoursite.com/2018/09/25/Leetcode387/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Some tips to notify n is zero, return initial matrix two dimensional vector initialize with size vector&amp;lt;vector&amp;gt; spiral (n,vector(n,0)); when matrix spiral, the element is updated by (cn">
+<meta property="og:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-08T06:03:41.588Z">
+<meta property="og:updated_time" content="2018-09-27T04:29:57.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode59-Spiral Matrix II">
-<meta name="twitter:description" content="Solution Some tips to notify n is zero, return initial matrix two dimensional vector initialize with size vector&amp;lt;vector&amp;gt; spiral (n,vector(n,0)); when matrix spiral, the element is updated by (cn">
+<meta name="twitter:title" content="Leetcode387 - First Unique Character in a String">
+<meta name="twitter:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/06/Leetcode59/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/25/Leetcode387/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode59-Spiral Matrix II | EternalEep</title>
+  <title>Leetcode387 - First Unique Character in a String | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Leetcode59/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Leetcode387/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode59-Spiral Matrix II
+          <h1 class="post-title" itemprop="name headline">Leetcode387 - First Unique Character in a String
               
             
           </h1>
@@ -322,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-09-06 23:42:37" itemprop="dateCreated datePublished" datetime="2018-09-06T23:42:37+08:00">2018-09-06</time>
+              <time title="Created: 2018-09-25 23:11:46" itemprop="dateCreated datePublished" datetime="2018-09-25T23:11:46+08:00">2018-09-25</time>
             
 
             
@@ -339,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-08 14:03:41" itemprop="dateModified" datetime="2018-09-08T14:03:41+08:00">2018-09-08</time>
+                <time title="Modified: 2018-09-27 12:29:57" itemprop="dateModified" datetime="2018-09-27T12:29:57+08:00">2018-09-27</time>
               
             
           </span>
@@ -373,16 +373,28 @@
 
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li>Some tips to notify<ul>
-<li>n is zero, return initial matrix</li>
-<li>two dimensional vector initialize with size vector&lt;vector<int>&gt; spiral (n,vector<int>(n,0));</int></int></li>
-<li>when matrix spiral, the element is updated by (cnt+1), not (cnt+1)^2</li>
+<li>Approach 1<ul>
+<li>using (cnt[p-‘a’]) to record the alphabet</li>
+<li>count (cnt[s[i]-‘a’]==1) then return i</li>
+<li>with s.size(), not cnt.size()</li>
+</ul>
+</li>
+<li><p>Complexity Analysis</p>
+<ul>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(<span class="number">26</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> p:s)&#123;</span><br><span class="line">            cnt[p-<span class="string">'a'</span>]+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[s[i]-<span class="string">'a'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Approach 2</p>
+<ul>
+<li>traverse the s</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: O(N)</li>
-<li>Space complexity:O(N)</li>
-<li>Runtime: 0ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generateMatrix(<span class="keyword">int</span> n)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; spiral (n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n,<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">if</span>(n) &#123;</span><br><span class="line">                    <span class="keyword">int</span> r1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> c1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> r2 = n;</span><br><span class="line">                    <span class="keyword">int</span> c2 = n;</span><br><span class="line">                    <span class="keyword">int</span> bound = r2*c2;</span><br><span class="line">                    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">while</span> (cnt&lt;bound) &#123;</span><br><span class="line">                        <span class="comment">// Only a line</span></span><br><span class="line">                        <span class="keyword">if</span> (r1 == (r2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c1 == (c2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1; r &lt; r2; r++) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="comment">// The first line should be printed completely.</span></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1 + <span class="number">1</span>; r &lt; r2 - <span class="number">1</span>; r++) &#123;</span><br><span class="line">                                spiral[r][c2 - <span class="number">1</span>] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c2 - <span class="number">1</span>; c &gt; c1; c--) &#123;</span><br><span class="line">                                spiral[r2 - <span class="number">1</span>][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r2 - <span class="number">1</span>; r &gt; r1; r--) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            r1++;</span><br><span class="line">                            c1++;</span><br><span class="line">                            r2--;</span><br><span class="line">                            c2--;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> spiral;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Time complexity: O(n^2)</li>
+<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)&#123;</span><br><span class="line">                b = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!=j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j]==s[i]) &#123;</span><br><span class="line">                        b++;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(!b) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -413,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/06/Leetcode54/" rel="next" title="Leetcode54-Spiral Matrix">
-                <i class="fa fa-chevron-left"></i> Leetcode54-Spiral Matrix
+              <a href="/2018/09/24/Leetcode541/" rel="next" title="Leetcode541-Reverse String II">
+                <i class="fa fa-chevron-left"></i> Leetcode541-Reverse String II
               </a>
             
           </div>
@@ -422,10 +434,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/Timecomplexity/" rel="prev" title="Time complexity analysis">
-                Time complexity analysis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
