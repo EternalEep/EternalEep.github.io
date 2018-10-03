@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Approach reverse traversing begin and end using “reverse” function   We don’t need to consider the null string.   Complexity Analysis Time complexity: O(n) Space complexity: O(1) Runtime: 8ms">
+  <meta name="description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)1234567891011121314">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode344-Reverse String">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/Leetcode344/index.html">
+<meta property="og:title" content="Leetcode155 - Min Stack">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/Leetcode155/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach reverse traversing begin and end using “reverse” function   We don’t need to consider the null string.   Complexity Analysis Time complexity: O(n) Space complexity: O(1) Runtime: 8ms">
+<meta property="og:description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)1234567891011121314">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T13:07:04.046Z">
+<meta property="og:updated_time" content="2018-10-03T16:24:00.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode344-Reverse String">
-<meta name="twitter:description" content="Solution Approach reverse traversing begin and end using “reverse” function   We don’t need to consider the null string.   Complexity Analysis Time complexity: O(n) Space complexity: O(1) Runtime: 8ms">
+<meta name="twitter:title" content="Leetcode155 - Min Stack">
+<meta name="twitter:description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)1234567891011121314">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/Leetcode344/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/Leetcode155/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode344-Reverse String | EternalEep</title>
+  <title>Leetcode155 - Min Stack | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/Leetcode344/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/Leetcode155/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode344-Reverse String
+          <h1 class="post-title" itemprop="name headline">Leetcode155 - Min Stack
               
             
           </h1>
@@ -322,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-09-24 21:00:33 / Modified: 21:07:04" itemprop="dateCreated datePublished" datetime="2018-09-24T21:00:33+08:00">2018-09-24</time>
+              <time title="Created: 2018-10-04 00:12:48 / Modified: 00:24:00" itemprop="dateCreated datePublished" datetime="2018-10-04T00:12:48+08:00">2018-10-04</time>
             
 
             
@@ -360,24 +360,19 @@
       
 
       
-        <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ul>
-<li>Approach<ol>
-<li>reverse traversing begin and end</li>
-<li>using “reverse” function</li>
-</ol>
-<ul>
-<li>We don’t need to consider the null string.</li>
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Approach<ul>
+<li>using another stack to store the minimum every state</li>
+<li>getMin() return the min stack top</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
-<li>Runtime: 8ms</li>
+<li>Time complexity: push O(1)</li>
+<li>Space complexity: push O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    MinStack() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        _data.push(x);</span><br><span class="line">        <span class="keyword">if</span>(_min.empty())&#123;</span><br><span class="line">            _min.push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> t = _min.top();</span><br><span class="line">            <span class="keyword">if</span>(t&gt;x)&#123;</span><br><span class="line">                _min.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                _min.push(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _data.pop();</span><br><span class="line">        _min.pop();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _min.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _min;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// if (s=="") &#123;</span></span><br><span class="line">        <span class="comment">//     return s;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">int</span> len = s.size();</span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = len<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            swap(s[i++],s[j--]);</span><br><span class="line">            <span class="comment">// tmp = s[j];</span></span><br><span class="line">            <span class="comment">// s[j--] = s[i];</span></span><br><span class="line">            <span class="comment">// s[i++] = tmp;            </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        reverse(s.begin(), s.end());</span><br><span class="line">        <span class="keyword">return</span> s;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -405,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/22/Leetcode21/" rel="next" title="Leetcode21 - Merge Two Sorted Lists">
-                <i class="fa fa-chevron-left"></i> Leetcode21 - Merge Two Sorted Lists
+              <a href="/2018/10/03/Leetcode232/" rel="next" title="Leetcode232-Implement Queue using Stacks">
+                <i class="fa fa-chevron-left"></i> Leetcode232-Implement Queue using Stacks
               </a>
             
           </div>
@@ -414,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/24/Leetcode541/" rel="prev" title="Leetcode541-Reverse String II">
-                Leetcode541-Reverse String II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,7 +518,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
 
           </div>
