@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+  <meta name="description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode21 - Merge Two Sorted Lists">
-<meta property="og:url" content="http://yoursite.com/2018/09/22/Leetcode21/index.html">
+<meta property="og:title" content="heap">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/heap/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta property="og:description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T04:27:43.789Z">
+<meta property="og:updated_time" content="2018-10-09T09:01:58.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode21 - Merge Two Sorted Lists">
-<meta name="twitter:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta name="twitter:title" content="heap">
+<meta name="twitter:description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/22/Leetcode21/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/heap/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode21 - Merge Two Sorted Lists | EternalEep</title>
+  <title>heap | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/Leetcode21/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/heap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode21 - Merge Two Sorted Lists
+          <h1 class="post-title" itemprop="name headline">heap
               
             
           </h1>
@@ -322,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-09-22 12:08:53 / Modified: 12:27:43" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
+              <time title="Created: 2018-10-09 16:54:51 / Modified: 17:01:58" itemprop="dateCreated datePublished" datetime="2018-10-09T16:54:51+08:00">2018-10-09</time>
             
 
             
@@ -360,36 +360,11 @@
       
 
       
-        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach</p>
-<ul>
-<li>Set temperal head node pre, and save pre</li>
-<li>l1/l2 is null, then return l2/l1, this is the trick to be considered</li>
-<li>when l1&amp;l2 is not null, compare l1 value and l2 value<ul>
-<li>connect pre with l1/l2 whose value is smaller</li>
-<li>move the smaller l to next</li>
-<li>move pre to next node</li>
-</ul>
-</li>
-<li>when some l is null, we should judge if any of l1/l2 is not null, then connect pre with it(important)</li>
-<li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <pre><code>- If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. 
-- There are &quot;member access within null pointer of type &apos;struct ListNode&apos;&quot; error
-</code></pre><ul>
-<li>final return pre_save-&gt;next<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
+        <ul>
+<li>Small heap and Big heap using STL</li>
+<li>default priority_queue is big_heap<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// small_heap/big_heap realization</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; big_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            greater&lt;<span class="keyword">int</span>&gt; &gt; small_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            less&lt;<span class="keyword">int</span>&gt; &gt; big_heap2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (big_heap.empty())&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"big_heap is empty!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> test[] = &#123;<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">99</span>, <span class="number">4</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)&#123;</span><br><span class="line">        big_heap.push(test[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    big_heap.push(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        big_heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.size = %d\n"</span>, big_heap.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>Complexity Analysis</p>
-<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
-<li>Runtime: 8ms</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// set temporary listnode head</span></span><br><span class="line">        <span class="function">ListNode <span class="title">t_node</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode *pre = &amp;t_node;</span><br><span class="line">        ListNode *pre_save = pre;</span><br><span class="line">        <span class="keyword">if</span>(l1 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l2!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val&lt;=l2-&gt;val) &#123;</span><br><span class="line">                pre-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)&#123;</span><br><span class="line">                pre-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                pre-&gt;next = l1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                pre-&gt;next = l2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre_save-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -417,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/19/Leetcode92/" rel="next" title="Leetcode92-Reverse Linked List II">
-                <i class="fa fa-chevron-left"></i> Leetcode92-Reverse Linked List II
+              <a href="/2018/10/07/BinaryTree/" rel="next" title="BinaryTree">
+                <i class="fa fa-chevron-left"></i> BinaryTree
               </a>
             
           </div>
@@ -427,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/24/Leetcode344/" rel="prev" title="Leetcode344-Reverse String">
-                Leetcode344-Reverse String <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/09/Leetcode113/" rel="prev" title="Leetcode113 - Path Sum II">
+                Leetcode113 - Path Sum II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,17 +449,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -529,22 +495,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

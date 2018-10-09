@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+  <meta name="description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode21 - Merge Two Sorted Lists">
-<meta property="og:url" content="http://yoursite.com/2018/09/22/Leetcode21/index.html">
+<meta property="og:title" content="Leetcode113 - Path Sum II">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/Leetcode113/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta property="og:description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T04:27:43.789Z">
+<meta property="og:updated_time" content="2018-10-09T16:28:00.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode21 - Merge Two Sorted Lists">
-<meta name="twitter:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta name="twitter:title" content="Leetcode113 - Path Sum II">
+<meta name="twitter:description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/22/Leetcode21/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/Leetcode113/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode21 - Merge Two Sorted Lists | EternalEep</title>
+  <title>Leetcode113 - Path Sum II | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/Leetcode21/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/Leetcode113/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode21 - Merge Two Sorted Lists
+          <h1 class="post-title" itemprop="name headline">Leetcode113 - Path Sum II
               
             
           </h1>
@@ -322,12 +322,24 @@
                 
               
 
-              <time title="Created: 2018-09-22 12:08:53 / Modified: 12:27:43" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
+              <time title="Created: 2018-10-09 21:07:02" itemprop="dateCreated datePublished" datetime="2018-10-09T21:07:02+08:00">2018-10-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-10 00:28:00" itemprop="dateModified" datetime="2018-10-10T00:28:00+08:00">2018-10-10</time>
               
             
           </span>
@@ -361,35 +373,18 @@
 
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach</p>
-<ul>
-<li>Set temperal head node pre, and save pre</li>
-<li>l1/l2 is null, then return l2/l1, this is the trick to be considered</li>
-<li>when l1&amp;l2 is not null, compare l1 value and l2 value<ul>
-<li>connect pre with l1/l2 whose value is smaller</li>
-<li>move the smaller l to next</li>
-<li>move pre to next node</li>
+<li>Approach<ul>
+<li>Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value</li>
+<li>When travese to “leaf node”(need leaf node judgement!!)”, check if path_value==sum, then push path into result</li>
+<li>when postorder, pop_back the current node value, and path_value sub node value</li>
 </ul>
 </li>
-<li>when some l is null, we should judge if any of l1/l2 is not null, then connect pre with it(important)</li>
-<li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <pre><code>- If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. 
-- There are &quot;member access within null pointer of type &apos;struct ListNode&apos;&quot; error
-</code></pre><ul>
-<li>final return pre_save-&gt;next<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
-</li>
+<li><a href="https://www.quora.com/What-are-the-time-complexities-of-preorder-inorder-postorder-and-level-order-binary-tree-traversals-with-both-recursive-and-iterative-algorithms" target="_blank" rel="noopener">Complexity Analysis</a><ul>
+<li>Time Complexity: O(n)</li>
+<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">        <span class="keyword">int</span> path_val = <span class="number">0</span>;</span><br><span class="line">        preorder_pathSum(root,sum,path_val,path,result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">preorder_pathSum</span><span class="params">(TreeNode*node, <span class="keyword">int</span> sum, <span class="keyword">int</span> &amp;path_val, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;path, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node-&gt;val);</span><br><span class="line">        path_val+=node-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;left &amp;&amp; !node-&gt;right &amp;&amp; path_val==sum) &#123;</span><br><span class="line">            result.push_back(path);</span><br><span class="line">        &#125;</span><br><span class="line">        preorder_pathSum(node-&gt;left,sum,path_val,path,result);</span><br><span class="line">        preorder_pathSum(node-&gt;right,sum,path_val,path,result);</span><br><span class="line">        path_val-=node-&gt;val;</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>Complexity Analysis</p>
-<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
-<li>Runtime: 8ms</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// set temporary listnode head</span></span><br><span class="line">        <span class="function">ListNode <span class="title">t_node</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode *pre = &amp;t_node;</span><br><span class="line">        ListNode *pre_save = pre;</span><br><span class="line">        <span class="keyword">if</span>(l1 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l2!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val&lt;=l2-&gt;val) &#123;</span><br><span class="line">                pre-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)&#123;</span><br><span class="line">                pre-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                pre-&gt;next = l1;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                pre-&gt;next = l2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre_save-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -417,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/19/Leetcode92/" rel="next" title="Leetcode92-Reverse Linked List II">
-                <i class="fa fa-chevron-left"></i> Leetcode92-Reverse Linked List II
+              <a href="/2018/10/09/heap/" rel="next" title="heap">
+                <i class="fa fa-chevron-left"></i> heap
               </a>
             
           </div>
@@ -426,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/24/Leetcode344/" rel="prev" title="Leetcode344-Reverse String">
-                Leetcode344-Reverse String <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
