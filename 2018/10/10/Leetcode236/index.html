@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Approach when queue push, using temp_stack to swap element order push exisited data_stack to temp_queue add new element to temp_stack copy temp_stack to data_stack then data_stack is the fina">
+  <meta name="description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode232-Implement Queue using Stacks">
-<meta property="og:url" content="http://yoursite.com/2018/10/03/Leetcode232/index.html">
+<meta property="og:title" content="Leetcode236-Lowest Common Ancestor of a Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2018/10/10/Leetcode236/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach when queue push, using temp_stack to swap element order push exisited data_stack to temp_queue add new element to temp_stack copy temp_stack to data_stack then data_stack is the fina">
+<meta property="og:description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-03T15:53:20.460Z">
+<meta property="og:updated_time" content="2018-10-10T11:20:22.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode232-Implement Queue using Stacks">
-<meta name="twitter:description" content="Solution Approach when queue push, using temp_stack to swap element order push exisited data_stack to temp_queue add new element to temp_stack copy temp_stack to data_stack then data_stack is the fina">
+<meta name="twitter:title" content="Leetcode236-Lowest Common Ancestor of a Binary Tree">
+<meta name="twitter:description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/03/Leetcode232/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/10/Leetcode236/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode232-Implement Queue using Stacks | EternalEep</title>
+  <title>Leetcode236-Lowest Common Ancestor of a Binary Tree | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/Leetcode232/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/Leetcode236/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode232-Implement Queue using Stacks
+          <h1 class="post-title" itemprop="name headline">Leetcode236-Lowest Common Ancestor of a Binary Tree
               
             
           </h1>
@@ -322,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-10-03 23:50:53 / Modified: 23:53:20" itemprop="dateCreated datePublished" datetime="2018-10-03T23:50:53+08:00">2018-10-03</time>
+              <time title="Created: 2018-10-10 12:09:19 / Modified: 19:20:22" itemprop="dateCreated datePublished" datetime="2018-10-10T12:09:19+08:00">2018-10-10</time>
             
 
             
@@ -362,18 +362,19 @@
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
 <li>Approach<ul>
-<li>when queue push, using temp_stack to swap element order<ul>
-<li>push exisited data_stack to temp_queue</li>
-<li>add new element to temp_stack</li>
-<li>copy temp_stack to data_stack</li>
-<li>then data_stack is the final queue result</li>
+<li>The common Ancestor of two nodes is in the path to the two nodes</li>
+<li>The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously</li>
+<li>So we calculate the pPath and qPath result and find the lasted common node in two path</li>
 </ul>
 </li>
+<li>Tips<ul>
+<li>Preorder the p and q path (we should pay attention to that using the pResult and qResult to store result. In recursive funciton, when search the goal, then copy pPath/qPath to result).</li>
+<li>Need the tag “finish” to mark if the search finished, if finished, then don’t search deeper. </li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: push O(n), other O(1)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    MyQueue() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; temp_stack;</span><br><span class="line">        <span class="keyword">while</span>(!_data.empty())&#123;</span><br><span class="line">            temp_stack.push(_data.top());</span><br><span class="line">            _data.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        temp_stack.push(x);</span><br><span class="line">        <span class="keyword">while</span>(!temp_stack.empty())&#123;</span><br><span class="line">            _data.push(temp_stack.top());</span><br><span class="line">            temp_stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = _data.top();</span><br><span class="line">        _data.pop();</span><br><span class="line">        <span class="keyword">return</span>  x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.empty();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<li>Time Complexity: O(n)</li>
+<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pResult;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qResult;</span><br><span class="line">        <span class="keyword">int</span> finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,p-&gt;val, finish, pPath, pResult);</span><br><span class="line">        finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,q-&gt;val, finish, qPath, qResult);</span><br><span class="line">        <span class="keyword">int</span> pathlen;</span><br><span class="line">        <span class="keyword">if</span>(pResult.size()&lt;qResult.size())&#123;</span><br><span class="line">            pathlen = pResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            pathlen = qResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pathlen;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pResult[i]==qResult[i])&#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pResult[index];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treeNodePath</span><span class="params">(TreeNode* node, <span class="keyword">int</span> val, <span class="keyword">int</span> finish, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; path, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node || finish)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val==val)&#123;</span><br><span class="line">            finish=<span class="number">1</span>;</span><br><span class="line">            result= path;</span><br><span class="line">        &#125;</span><br><span class="line">        treeNodePath(node-&gt;left,val,finish, path, result);</span><br><span class="line">        treeNodePath(node-&gt;right,val,finish, path, result);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -405,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/03/Leetcode225/" rel="next" title="Leetcode225 - Implement Stack using Queues">
-                <i class="fa fa-chevron-left"></i> Leetcode225 - Implement Stack using Queues
+              <a href="/2018/10/09/Leetcode113/" rel="next" title="Leetcode113 - Path Sum II">
+                <i class="fa fa-chevron-left"></i> Leetcode113 - Path Sum II
               </a>
             
           </div>
@@ -414,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/04/Leetcode155/" rel="prev" title="Leetcode155 - Min Stack">
-                Leetcode155 - Min Stack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

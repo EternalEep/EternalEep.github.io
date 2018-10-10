@@ -277,6 +277,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Weiwen Yi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EternalEep">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/25/II/" itemprop="url">
+                  Leetcode122-Best Time to Buy and Sell Stock II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-25 22:48:34" itemprop="dateCreated datePublished" datetime="2018-08-25T22:48:34+08:00">2018-08-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-08 14:13:02" itemprop="dateModified" datetime="2018-09-08T14:13:02+08:00">2018-09-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Submission-1"><a href="#Submission-1" class="headerlink" title="Submission 1"></a>Submission 1</h3><ul>
+<li>Simple one pass<ul>
+<li>If the second num is larger than previous num, add it to profit.</li>
+<li>Traversing the array from start to end.</li>
+<li>The total sum we obtain will be the maximum profit.</li>
+<li>e.g.[1, 7, 2, 3, 6, 7, 6, 7]<ul>
+<li>(3-2)+(6-3)+(7-6)=7-2=5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: O(n)</li>
+<li>Space complexity:O(1)</li>
+<li>Runtime: 4ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><ul>
+<li>Peak Valley Approach<ul>
+<li>To find the consecutive peak and valley value, something to notify:<ol>
+<li>i is from zero, and smaller than len(array)-1.</li>
+<li>prices[i]&gt;=prices[i+1].</li>
+<li>prices[i]&lt;=prices[i+1].</li>
+<li>pay attention to equality sign, otherwise test case {3,3}, i will not increase, the program can not get out of outer layer of while loop.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: O(n)</li>
+<li>Space complexity:O(k)</li>
+<li>Runtime: 4ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span> &amp;&amp; prices[i]&gt;=prices[i+<span class="number">1</span>])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            valley = prices[i];</span><br><span class="line">            <span class="keyword">while</span>(i&lt;prices.size()<span class="number">-1</span> &amp;&amp; prices[i]&lt;=prices[i+<span class="number">1</span>])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            peak = prices[i];</span><br><span class="line">            profit+=(peak-valley);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/Leetcode26-Remove-Duplicates-from-Sorted-Array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -658,7 +847,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
