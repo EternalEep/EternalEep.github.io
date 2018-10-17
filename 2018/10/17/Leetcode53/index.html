@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
+  <meta name="description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode113 - Path Sum II">
-<meta property="og:url" content="http://yoursite.com/2018/10/09/Leetcode113/index.html">
+<meta property="og:title" content="Leetcode53-Maximum Subarray">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/Leetcode53/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
+<meta property="og:description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T16:28:00.519Z">
+<meta property="og:updated_time" content="2018-10-17T13:45:11.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode113 - Path Sum II">
-<meta name="twitter:description" content="Solution Approach Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value When travese to “leaf node”(need leaf node judgement!!">
+<meta name="twitter:title" content="Leetcode53-Maximum Subarray">
+<meta name="twitter:description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/09/Leetcode113/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/17/Leetcode53/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Leetcode113 - Path Sum II | EternalEep</title>
+  <title>Leetcode53-Maximum Subarray | EternalEep</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/Leetcode113/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/Leetcode53/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode113 - Path Sum II
+          <h1 class="post-title" itemprop="name headline">Leetcode53-Maximum Subarray
               
             
           </h1>
@@ -322,24 +322,12 @@
                 
               
 
-              <time title="Created: 2018-10-09 21:07:02" itemprop="dateCreated datePublished" datetime="2018-10-09T21:07:02+08:00">2018-10-09</time>
+              <time title="Created: 2018-10-17 21:31:59 / Modified: 21:45:11" itemprop="dateCreated datePublished" datetime="2018-10-17T21:31:59+08:00">2018-10-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-10 00:28:00" itemprop="dateModified" datetime="2018-10-10T00:28:00+08:00">2018-10-10</time>
               
             
           </span>
@@ -373,15 +361,37 @@
 
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li>Approach<ul>
-<li>Deep traverse the binary tree from root, when preorder, push_back node value into path vector and use path_value add node value</li>
-<li>When travese to “leaf node”(need leaf node judgement!!)”, check if path_value==sum, then push path into result</li>
-<li>when postorder, pop_back the current node value, and path_value sub node value</li>
+<li><p>Approach 1</p>
+<ul>
+<li>Progressive summation<ul>
+<li>Continuously find the sum of the subsequences starting with nums[i]</li>
+<li>Recording the sum of the largest subsequences in the process of seeking</li>
 </ul>
 </li>
-<li><a href="https://www.quora.com/What-are-the-time-complexities-of-preorder-inorder-postorder-and-level-order-binary-tree-traversals-with-both-recursive-and-iterative-algorithms" target="_blank" rel="noopener">Complexity Analysis</a><ul>
-<li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">        <span class="keyword">int</span> path_val = <span class="number">0</span>;</span><br><span class="line">        preorder_pathSum(root,sum,path_val,path,result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">preorder_pathSum</span><span class="params">(TreeNode*node, <span class="keyword">int</span> sum, <span class="keyword">int</span> &amp;path_val, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;path, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node-&gt;val);</span><br><span class="line">        path_val+=node-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;left &amp;&amp; !node-&gt;right &amp;&amp; path_val==sum) &#123;</span><br><span class="line">            result.push_back(path);</span><br><span class="line">        &#125;</span><br><span class="line">        preorder_pathSum(node-&gt;left,sum,path_val,path,result);</span><br><span class="line">        preorder_pathSum(node-&gt;right,sum,path_val,path,result);</span><br><span class="line">        path_val-=node-&gt;val;</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Complexity Analysis<ul>
+<li>Time complexity:O($$n^2$$)</li>
+<li>Space complexity:O(1)</li>
+<li>Runtime: 160ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;nums.size();j++)&#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                    maxSum = sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Approach 2</p>
+<ul>
+<li>Juddging summation<ul>
+<li>A num adding a negative num will be reduced</li>
+<li>Adding from nums[0], if sum&gt;maxSum, then substitute maxSum</li>
+<li>if sum&lt;0, then throwing away current sum, move to next nums, calculating sum again</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity:O(n)</li>
+<li>Space complexity:O(1)</li>
+<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            sum+=nums[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum=sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -412,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/09/heap/" rel="next" title="heap">
-                <i class="fa fa-chevron-left"></i> heap
+              <a href="/2018/10/10/Leetcode236/" rel="next" title="Leetcode236-Lowest Common Ancestor of a Binary Tree">
+                <i class="fa fa-chevron-left"></i> Leetcode236-Lowest Common Ancestor of a Binary Tree
               </a>
             
           </div>
@@ -421,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/10/Leetcode236/" rel="prev" title="Leetcode236-Lowest Common Ancestor of a Binary Tree">
-                Leetcode236-Lowest Common Ancestor of a Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
