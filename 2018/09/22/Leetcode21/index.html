@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Solution Approach Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre wi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-28T05:31:17.885Z">
+<meta property="og:updated_time" content="2018-10-28T05:40:40.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode21 - Merge Two Sorted Lists">
 <meta name="twitter:description" content="Solution Approach Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre wi">
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-28 13:31:17" itemprop="dateModified" datetime="2018-10-28T13:31:17+08:00">2018-10-28</time>
+                <time title="Modified: 2018-10-28 13:40:40" itemprop="dateModified" datetime="2018-10-28T13:40:40+08:00">2018-10-28</time>
               
             
           </span>
@@ -384,10 +384,12 @@
 </ul>
 </li>
 <li>when some l is null, we should judge if any of l1/l2 is not null, then connect pre with it(important)</li>
-<li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <pre><code>- If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. 
-- There are &quot;member access within null pointer of type &apos;struct ListNode&apos;&quot; error
-</code></pre><ul>
+<li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <ul>
+<li>If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. </li>
+<li>There are “member access within null pointer of type ‘struct ListNode’” error<ul>
 <li>final return pre_save-&gt;next</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

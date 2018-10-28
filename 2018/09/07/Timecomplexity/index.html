@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="This is time complexity analysis tutorials some resources Understanding Time complexity with Simple Examples Link How to analyse time complexity: Count your steps Link Time Complexity of Algorithms Li">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-28T05:29:59.287Z">
+<meta property="og:updated_time" content="2018-10-28T05:42:57.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Time complexity analysis">
 <meta name="twitter:description" content="This is time complexity analysis tutorials some resources Understanding Time complexity with Simple Examples Link How to analyse time complexity: Count your steps Link Time Complexity of Algorithms Li">
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-28 13:29:59" itemprop="dateModified" datetime="2018-10-28T13:29:59+08:00">2018-10-28</time>
+                <time title="Modified: 2018-10-28 13:42:57" itemprop="dateModified" datetime="2018-10-28T13:42:57+08:00">2018-10-28</time>
               
             
           </span>
@@ -392,18 +392,21 @@
 </li>
 <li>Definition: time complexity T(n) as the number of such operations the algorithm performs given array of len n</li>
 </ul>
-<h2 id="Worst-case-time"><a href="#Worst-case-time" class="headerlink" title="Worst-case time"></a>Worst-case time</h2><p>It gives an upper bound on time requirements and is easy to compute.</p>
+<h2 id="Worst-case-time"><a href="#Worst-case-time" class="headerlink" title="Worst-case time"></a>Worst-case time</h2><ul>
+<li>It gives an upper bound on time requirements and is easy to compute.</li>
+</ul>
 <h2 id="Average-case-time"><a href="#Average-case-time" class="headerlink" title="Average-case time"></a>Average-case time</h2><ul>
 <li>execution times for all possible inputs of size n and prob. of all inputs.</li>
 <li>hard to compute</li>
 </ul>
 <h2 id="Linear-vs-quadratic-time"><a href="#Linear-vs-quadratic-time" class="headerlink" title="Linear vs. quadratic time"></a>Linear vs. quadratic time</h2><ul>
-<li>Quadratic time complexity<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Reverse the order of the elements in the array a.</span><br><span class="line">Algorithm reverse(a):</span><br><span class="line">    for i = 1 to len(a)-1</span><br><span class="line">        x ← a[i]</span><br><span class="line">        for j = i downto 1</span><br><span class="line">            a[j] ← a[j-1] //element operation</span><br><span class="line">        a[0] ← x</span><br></pre></td></tr></table></figure>
+<li><p>Quadratic time complexity</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Reverse the order of the elements in the array a.</span><br><span class="line">Algorithm reverse(a):</span><br><span class="line">    for i = 1 to len(a)-1</span><br><span class="line">        x ← a[i]</span><br><span class="line">        for j = i downto 1</span><br><span class="line">            a[j] ← a[j-1] //element operation</span><br><span class="line">        a[0] ← x</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>${W_n = 1+2+…+n-1=n(n-1)/2=n^2/2-n/2}$, ${O(n^2)}$</p>
-<ul>
-<li>Linear time complexity<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Algorithm reverse(a):</span><br><span class="line">    for i = 0 to n/2</span><br><span class="line">        swap a[i] and a[n-i-1]</span><br></pre></td></tr></table></figure>
+<li><p>${W_n = 1+2+…+n-1=n(n-1)/2=n^2/2-n/2}$, ${O(n^2)}$</p>
+</li>
+<li><p>Linear time complexity</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Algorithm reverse(a):</span><br><span class="line">    for i = 0 to n/2</span><br><span class="line">        swap a[i] and a[n-i-1]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>improved algorithm has ${O(n)}$</p>
@@ -413,24 +416,24 @@
 </ul>
 </li>
 <li>Constant time complexity<ul>
-<li>${T(n)\in{O(1}}$</li>
+<li>${T(n)\in{O(1)}$</li>
 </ul>
 </li>
 <li>Linear time complexity<ul>
-<li>${T(n)\in{O(n}}$</li>
+<li>${T(n)\in{O(n)}}$</li>
 </ul>
 </li>
 <li>Quadratic time complexity<ul>
-<li>${T(n)\in{O(n^2}}$</li>
+<li>${T(n)\in{O(n^2)}}$</li>
 </ul>
 </li>
 <li>Sloppy notation</li>
 <li>Big Omega is used to give a lower bound for the growth of a function.</li>
-<li>O(nlogn) is really good， grow very slowly</li>
+<li>$O(nlogn)$ is really good， grow very slowly</li>
 </ul>
 <h2 id="Time-complexity-of-recursive-functions"><a href="#Time-complexity-of-recursive-functions" class="headerlink" title="Time complexity of recursive functions"></a>Time complexity of recursive functions</h2><ul>
-<li>Basic examples O(n)</li>
-<li>Binary search O(logn)</li>
+<li>Basic examples $O(n)$</li>
+<li>Binary search $O(logn)$</li>
 <li>Master Therom</li>
 </ul>
 
