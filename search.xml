@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Leetcode74-Search a 2D Matrix]]></title>
+    <url>%2F2018%2F10%2F27%2FLeetcode74%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode1-Two Sum]]></title>
+    <url>%2F2018%2F10%2F27%2FLeetcode1%2F</url>
+    <content type="text"><![CDATA[Solution 1 Approach Brute Force Loop through each element and find x if there is another value that equals to target-x Complexity Analysis Time complexity: O(n^2) Space complexity: O(1) Runtime: 172ms12345678910111213141516class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; index; for(int i=0;i&lt;nums.size()-1;i++)&#123; for(int j=i+1;j&lt;nums.size();j++)&#123; if(nums[j]==target-nums[i])&#123; index.push_back(i); index.push_back(j); return index; &#125; &#125; &#125; throw "No two sum solution"; &#125;&#125;; Runtime:92ms 123456789101112131415161718class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; vector&lt;int&gt; index; int result; vector&lt;int&gt;::iterator it; for(int i=0;i&lt;nums.size()-1;i++)&#123; result = target-nums[i]; it = find(nums.begin()+i+1,nums.end(),result); if(it!=nums.end())&#123; index.push_back(i); index.push_back(distance(nums.begin(),it)); return index; &#125; &#125; throw "No two sum solution"; &#125;&#125;; Solution 2 Approach One-pass Hash Table While we iterate and inserting elements into the table, we also look back to check if current element’s complement already exsits in the table. If it exists, we have found a solution and return immediately. Complexity Analysis Time complexity: O(n) Space complexity: O(1) Runtime: 8ms12345678910111213141516171819class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; unordered_map&lt;int,int&gt; sum; unordered_map&lt;int,int&gt;::iterator it; vector&lt;int&gt; index; for(int i=0;i&lt;nums.size();i++)&#123; it = sum.find(target-nums[i]); if(it!=sum.end())&#123; return vector&lt;int&gt;&#123;it-&gt;second,i&#125;; &#125; else&#123; sum.insert(&#123;nums[i],i&#125;); &#125; &#125; throw "no two sum"; &#125;&#125;; 123456789101112131415class Solution &#123;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; unordered_map&lt;int,int&gt; sum; for(int i=0;i&lt;nums.size();i++) &#123; if(sum.count(target-nums[i]))&#123; return vector&lt;int&gt;&#123;i,sum[target-nums[i]]&#125;; &#125; else&#123; sum[nums[i]]=i; &#125; &#125; throw "no two sum"; &#125;&#125;;]]></content>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode70-Climbing Stairs]]></title>
+    <url>%2F2018%2F10%2F19%2FLeetcode70%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Leetcode20-Valid Parentheses]]></title>
     <url>%2F2018%2F10%2F18%2FLeetcode20%2F</url>
     <content type="text"><![CDATA[Solution 1 Approach Initialize stack S. Process each bracket of the expression one at a time. If we encounter an opening bracket, we simply push it onto the stack. This means we will process it later, let us simply move onto the sub-expression ahead. If we encouter a closing bracket, then we check the element on top of the stack. If the element at the top of the stack is an opening bracket of the same type, then we pop it off the stack and continue processing. Else, this implies an invalid expression. In the end, if we are left with a stack still having elements, then this implies an invalid expression. Tips char of c++ using ‘ ‘ not “ “ We should judge if the stack is empty? It is important. If we search the closing bracket, stack is empty, it is invalid. If we search the open bracket, stack is empty, then push onto the stack for next search iteration. Complexity Analysis Time complexity:O(n) Space complexity:O(n) Runtime:4ms12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849class Solution &#123;public: bool isValid(string s) &#123; stack&lt;char&gt; st; // len=0 return true if(s.length()==0)&#123; return true; &#125; // right char if(s[0]==')'||s[0]==']'||s[0]=='&#125;')&#123; return false; &#125; st.push(s[0]); for(int i=1;i&lt;s.length();i++)&#123; if(s[i]==')')&#123; if(!st.empty() &amp;&amp; st.top()=='(')&#123; st.pop(); &#125; else&#123; return false; &#125; &#125; else if(s[i]==']')&#123; if(!st.empty() &amp;&amp; st.top()=='[')&#123; st.pop(); &#125; else&#123; return false; &#125; &#125; else if(s[i]=='&#125;')&#123; if(!st.empty() &amp;&amp; st.top()=='&#123;')&#123; st.pop(); &#125; else&#123; return false; &#125; &#125; else&#123; st.push(s[i]); &#125; &#125; if(st.empty())&#123; return true; &#125; return false; &#125;&#125;; Solution 2 Approach Using unordered_map stl structure unordered_map hash can match the brackets and save code lines others are the same as Solution 1 Complexity Analysis Time complexity: O(n) Space complexity: O(n) Runtime: 0ms1234567891011121314151617181920212223class Solution &#123;public: bool isValid(string s) &#123; stack&lt;char&gt; st; unordered_map&lt;char,char&gt; hash&#123;&#123;'(',')'&#125;,&#123;'&#123;','&#125;'&#125;,&#123;'[',']'&#125;&#125;; for(int i=0; i&lt;s.length(); i++)&#123; if(s[i]=='['||s[i]=='&#123;'||s[i]=='(')&#123; st.push(s[i]); &#125; else if(!st.empty() &amp;&amp; hash[st.top()]==s[i])&#123; st.pop(); &#125; else&#123; return false; &#125; &#125; if(st.empty())&#123; return true; &#125; else&#123; return false; &#125; &#125;&#125;;]]></content>
