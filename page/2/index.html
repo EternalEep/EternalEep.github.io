@@ -323,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-10-04 00:12:48 / Modified: 00:24:00" itemprop="dateCreated datePublished" datetime="2018-10-04T00:12:48+08:00">2018-10-04</time>
+              <time title="Created: 2018-10-04 00:12:48" itemprop="dateCreated datePublished" datetime="2018-10-04T00:12:48+08:00">2018-10-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:32" itemprop="dateModified" datetime="2018-10-28T13:31:32+08:00">2018-10-28</time>
               
             
           </span>
@@ -371,11 +383,11 @@
 </li>
 <li>Complexity Analysis<ul>
 <li>Time complexity: push O(1)</li>
-<li>Space complexity: push O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    MinStack() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        _data.push(x);</span><br><span class="line">        <span class="keyword">if</span>(_min.empty())&#123;</span><br><span class="line">            _min.push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> t = _min.top();</span><br><span class="line">            <span class="keyword">if</span>(t&gt;x)&#123;</span><br><span class="line">                _min.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                _min.push(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _data.pop();</span><br><span class="line">        _min.pop();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _min.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _min;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: push O(n)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    MinStack() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        _data.push(x);</span><br><span class="line">        <span class="keyword">if</span>(_min.empty())&#123;</span><br><span class="line">            _min.push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> t = _min.top();</span><br><span class="line">            <span class="keyword">if</span>(t&gt;x)&#123;</span><br><span class="line">                _min.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                _min.push(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _data.pop();</span><br><span class="line">        _min.pop();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _min.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _min;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -492,7 +504,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-18 10:12:05" itemprop="dateModified" datetime="2018-10-18T10:12:05+08:00">2018-10-18</time>
+                <time title="Modified: 2018-10-28 13:31:05" itemprop="dateModified" datetime="2018-10-28T13:31:05+08:00">2018-10-28</time>
               
             
           </span>
@@ -540,11 +552,11 @@
 </li>
 <li>Complexity Analysis<ul>
 <li>Time complexity: push O(n), other O(1)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    MyQueue() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; temp_stack;</span><br><span class="line">        <span class="keyword">while</span>(!_data.empty())&#123;</span><br><span class="line">            temp_stack.push(_data.top());</span><br><span class="line">            _data.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        temp_stack.push(x);</span><br><span class="line">        <span class="keyword">while</span>(!temp_stack.empty())&#123;</span><br><span class="line">            _data.push(temp_stack.top());</span><br><span class="line">            temp_stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = _data.top();</span><br><span class="line">        _data.pop();</span><br><span class="line">        <span class="keyword">return</span>  x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.empty();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: O(1)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    MyQueue() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; temp_stack;</span><br><span class="line">        <span class="keyword">while</span>(!_data.empty())&#123;</span><br><span class="line">            temp_stack.push(_data.top());</span><br><span class="line">            _data.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        temp_stack.push(x);</span><br><span class="line">        <span class="keyword">while</span>(!temp_stack.empty())&#123;</span><br><span class="line">            _data.push(temp_stack.top());</span><br><span class="line">            temp_stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = _data.top();</span><br><span class="line">        _data.pop();</span><br><span class="line">        <span class="keyword">return</span>  x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.empty();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -644,12 +656,24 @@
                 
               
 
-              <time title="Created: 2018-10-03 17:11:30 / Modified: 23:53:27" itemprop="dateCreated datePublished" datetime="2018-10-03T17:11:30+08:00">2018-10-03</time>
+              <time title="Created: 2018-10-03 17:11:30" itemprop="dateCreated datePublished" datetime="2018-10-03T17:11:30+08:00">2018-10-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:07" itemprop="dateModified" datetime="2018-10-28T13:31:07+08:00">2018-10-28</time>
               
             
           </span>
@@ -818,7 +842,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-27 12:29:57" itemprop="dateModified" datetime="2018-09-27T12:29:57+08:00">2018-09-27</time>
+                <time title="Modified: 2018-10-28 13:30:31" itemprop="dateModified" datetime="2018-10-28T13:30:31+08:00">2018-10-28</time>
               
             
           </span>
@@ -860,25 +884,25 @@
 <li>with s.size(), not cnt.size()</li>
 </ul>
 </li>
-<li><p>Complexity Analysis</p>
-<ul>
+<li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(<span class="number">26</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> p:s)&#123;</span><br><span class="line">            cnt[p-<span class="string">'a'</span>]+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[s[i]-<span class="string">'a'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: O(1)</li>
 </ul>
 </li>
-<li><p>Approach 2</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(<span class="number">26</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> p:s)&#123;</span><br><span class="line">            cnt[p-<span class="string">'a'</span>]+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[s[i]-<span class="string">'a'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Approach 2<ul>
 <li>traverse the s</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
 <li>Time complexity: O(n^2)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)&#123;</span><br><span class="line">                b = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!=j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j]==s[i]) &#123;</span><br><span class="line">                        b++;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(!b) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: O(1)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)&#123;</span><br><span class="line">                b = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!=j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j]==s[i]) &#123;</span><br><span class="line">                        b++;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(!b) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -995,7 +1019,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-25 00:16:18" itemprop="dateModified" datetime="2018-09-25T00:16:18+08:00">2018-09-25</time>
+                <time title="Modified: 2018-10-28 13:29:58" itemprop="dateModified" datetime="2018-10-28T13:29:58+08:00">2018-10-28</time>
               
             
           </span>
@@ -1031,22 +1055,22 @@
         
           
             <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach</p>
-<ul>
+<li>Approach<ul>
 <li>using swap function to swap element</li>
-<li>notice that if end &gt; size-1 then modify end.<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseStr</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i += <span class="number">2</span> * k) &#123;</span><br><span class="line">           <span class="keyword">int</span> begin = i;</span><br><span class="line">           <span class="keyword">int</span> end = i + k - <span class="number">1</span>;</span><br><span class="line">           <span class="keyword">if</span> (end &gt; s.size()<span class="number">-1</span>)&#123;</span><br><span class="line">               end = s.size() - <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (begin &lt; end) &#123;</span><br><span class="line">               swap(s[end--], s[begin++]);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;     </span><br><span class="line">       <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>notice that if end &gt; size-1 then modify end.</li>
 </ul>
 </li>
-<li><p>Approach</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseStr</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i += <span class="number">2</span> * k) &#123;</span><br><span class="line">           <span class="keyword">int</span> begin = i;</span><br><span class="line">           <span class="keyword">int</span> end = i + k - <span class="number">1</span>;</span><br><span class="line">           <span class="keyword">if</span> (end &gt; s.size()<span class="number">-1</span>)&#123;</span><br><span class="line">               end = s.size() - <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (begin &lt; end) &#123;</span><br><span class="line">               swap(s[end--], s[begin++]);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;     </span><br><span class="line">       <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Approach<ul>
 <li>using reverse function</li>
 <li>min should include iterator, not int value</li>
-<li>can not use s.size()-1, if len(string)=4 and k=4, it will have error.<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseStr</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i += <span class="number">2</span> * k) &#123;</span><br><span class="line">               reverse(s.begin()+i,min(s.begin()+i+k, s.end()));</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>can not use s.size()-1, if len(string)=4 and k=4, it will have error.</li>
 </ul>
 </li>
 </ul>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseStr</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i += <span class="number">2</span> * k) &#123;</span><br><span class="line">               reverse(s.begin()+i,min(s.begin()+i+k, s.end()));</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1145,12 +1169,24 @@
                 
               
 
-              <time title="Created: 2018-09-24 21:00:33 / Modified: 21:07:04" itemprop="dateCreated datePublished" datetime="2018-09-24T21:00:33+08:00">2018-09-24</time>
+              <time title="Created: 2018-09-24 21:00:33" itemprop="dateCreated datePublished" datetime="2018-09-24T21:00:33+08:00">2018-09-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:30:54" itemprop="dateModified" datetime="2018-10-28T13:30:54+08:00">2018-10-28</time>
               
             
           </span>
@@ -1302,12 +1338,24 @@
                 
               
 
-              <time title="Created: 2018-09-22 12:08:53 / Modified: 12:27:43" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
+              <time title="Created: 2018-09-22 12:08:53" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:17" itemprop="dateModified" datetime="2018-10-28T13:31:17+08:00">2018-10-28</time>
               
             
           </span>
@@ -1343,8 +1391,7 @@
         
           
             <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach</p>
-<ul>
+<li>Approach<ul>
 <li>Set temperal head node pre, and save pre</li>
 <li>l1/l2 is null, then return l2/l1, this is the trick to be considered</li>
 <li>when l1&amp;l2 is not null, compare l1 value and l2 value<ul>
@@ -1357,14 +1404,15 @@
 <li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <pre><code>- If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. 
 - There are &quot;member access within null pointer of type &apos;struct ListNode&apos;&quot; error
 </code></pre><ul>
-<li>final return pre_save-&gt;next<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
-</li>
+<li>final return pre_save-&gt;next</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Complexity Analysis</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 <li>Runtime: 8ms</li>
@@ -1488,7 +1536,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-22 12:27:45" itemprop="dateModified" datetime="2018-09-22T12:27:45+08:00">2018-09-22</time>
+                <time title="Modified: 2018-10-28 13:29:56" itemprop="dateModified" datetime="2018-10-28T13:29:56+08:00">2018-10-28</time>
               
             
           </span>
@@ -1548,11 +1596,11 @@
 <li>Complexity Analysis<ul>
 <li>Time Complexity: O(n)</li>
 <li>Space Complexity: O(1)</li>
-<li>Runtime: 0ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode *pre_head = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *result = head;</span><br><span class="line">        <span class="keyword">int</span> cnt_m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// find pre_head</span></span><br><span class="line">        <span class="keyword">while</span> (head &amp;&amp; cnt_m&lt;m<span class="number">-1</span>) &#123;</span><br><span class="line">            pre_head = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            cnt_m++;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *modify_list_tail = head;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        ListNode *p = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (cnt &lt; (n-m+<span class="number">1</span>) ) &#123;</span><br><span class="line">            next = head-&gt;next;</span><br><span class="line">            head-&gt;next = p;</span><br><span class="line">            p = head;</span><br><span class="line">            head = next;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        modify_list_tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">if</span>(pre_head)&#123;</span><br><span class="line">            pre_head-&gt;next = p;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 0ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode *pre_head = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *result = head;</span><br><span class="line">        <span class="keyword">int</span> cnt_m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// find pre_head</span></span><br><span class="line">        <span class="keyword">while</span> (head &amp;&amp; cnt_m&lt;m<span class="number">-1</span>) &#123;</span><br><span class="line">            pre_head = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            cnt_m++;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *modify_list_tail = head;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        ListNode *p = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (cnt &lt; (n-m+<span class="number">1</span>) ) &#123;</span><br><span class="line">            next = head-&gt;next;</span><br><span class="line">            head-&gt;next = p;</span><br><span class="line">            p = head;</span><br><span class="line">            head = next;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        modify_list_tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">if</span>(pre_head)&#123;</span><br><span class="line">            pre_head-&gt;next = p;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1652,12 +1700,24 @@
                 
               
 
-              <time title="Created: 2018-09-07 16:59:55 / Modified: 18:44:20" itemprop="dateCreated datePublished" datetime="2018-09-07T16:59:55+08:00">2018-09-07</time>
+              <time title="Created: 2018-09-07 16:59:55" itemprop="dateCreated datePublished" datetime="2018-09-07T16:59:55+08:00">2018-09-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:29:59" itemprop="dateModified" datetime="2018-10-28T13:29:59+08:00">2018-10-28</time>
               
             
           </span>
@@ -1868,7 +1928,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-08 14:03:41" itemprop="dateModified" datetime="2018-09-08T14:03:41+08:00">2018-09-08</time>
+                <time title="Modified: 2018-10-28 13:29:55" itemprop="dateModified" datetime="2018-10-28T13:29:55+08:00">2018-10-28</time>
               
             
           </span>
@@ -1913,11 +1973,11 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity: O(N)</li>
 <li>Space complexity:O(N)</li>
-<li>Runtime: 0ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generateMatrix(<span class="keyword">int</span> n)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; spiral (n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n,<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">if</span>(n) &#123;</span><br><span class="line">                    <span class="keyword">int</span> r1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> c1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> r2 = n;</span><br><span class="line">                    <span class="keyword">int</span> c2 = n;</span><br><span class="line">                    <span class="keyword">int</span> bound = r2*c2;</span><br><span class="line">                    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">while</span> (cnt&lt;bound) &#123;</span><br><span class="line">                        <span class="comment">// Only a line</span></span><br><span class="line">                        <span class="keyword">if</span> (r1 == (r2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c1 == (c2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1; r &lt; r2; r++) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="comment">// The first line should be printed completely.</span></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1 + <span class="number">1</span>; r &lt; r2 - <span class="number">1</span>; r++) &#123;</span><br><span class="line">                                spiral[r][c2 - <span class="number">1</span>] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c2 - <span class="number">1</span>; c &gt; c1; c--) &#123;</span><br><span class="line">                                spiral[r2 - <span class="number">1</span>][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r2 - <span class="number">1</span>; r &gt; r1; r--) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            r1++;</span><br><span class="line">                            c1++;</span><br><span class="line">                            r2--;</span><br><span class="line">                            c2--;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> spiral;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Runtime: 0ms</li>
 </ul>
 </li>
 </ul>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generateMatrix(<span class="keyword">int</span> n)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; spiral (n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n,<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">if</span>(n) &#123;</span><br><span class="line">                    <span class="keyword">int</span> r1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> c1 = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">int</span> r2 = n;</span><br><span class="line">                    <span class="keyword">int</span> c2 = n;</span><br><span class="line">                    <span class="keyword">int</span> bound = r2*c2;</span><br><span class="line">                    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">while</span> (cnt&lt;bound) &#123;</span><br><span class="line">                        <span class="comment">// Only a line</span></span><br><span class="line">                        <span class="keyword">if</span> (r1 == (r2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c1 == (c2 - <span class="number">1</span>)) &#123;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1; r &lt; r2; r++) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="comment">// The first line should be printed completely.</span></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c1; c &lt; c2; c++) &#123;</span><br><span class="line">                                spiral[r1][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r1 + <span class="number">1</span>; r &lt; r2 - <span class="number">1</span>; r++) &#123;</span><br><span class="line">                                spiral[r][c2 - <span class="number">1</span>] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> c = c2 - <span class="number">1</span>; c &gt; c1; c--) &#123;</span><br><span class="line">                                spiral[r2 - <span class="number">1</span>][c] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">int</span> r = r2 - <span class="number">1</span>; r &gt; r1; r--) &#123;</span><br><span class="line">                                spiral[r][c1] = cnt + <span class="number">1</span>;</span><br><span class="line">                                cnt++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            r1++;</span><br><span class="line">                            c1++;</span><br><span class="line">                            r2--;</span><br><span class="line">                            c2--;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> spiral;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -2019,9 +2079,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -2188,7 +2246,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -2242,11 +2300,37 @@
       
     
       
+        
+      
     
       
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 

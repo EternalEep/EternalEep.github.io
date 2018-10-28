@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
+  <meta name="description" content="Solution Approach 1 Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Analy">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode53-Maximum Subarray">
 <meta property="og:url" content="http://yoursite.com/2018/10/17/Leetcode53/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
+<meta property="og:description" content="Solution Approach 1 Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Analy">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T13:45:11.149Z">
+<meta property="og:updated_time" content="2018-10-28T05:30:26.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode53-Maximum Subarray">
-<meta name="twitter:description" content="Solution Approach 1  Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Anal">
+<meta name="twitter:description" content="Solution Approach 1 Progressive summation Continuously find the sum of the subsequences starting with nums[i] Recording the sum of the largest subsequences in the process of seeking   Complexity Analy">
 
 
 
@@ -322,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-10-17 21:31:59 / Modified: 21:45:11" itemprop="dateCreated datePublished" datetime="2018-10-17T21:31:59+08:00">2018-10-17</time>
+              <time title="Created: 2018-10-17 21:31:59" itemprop="dateCreated datePublished" datetime="2018-10-17T21:31:59+08:00">2018-10-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:30:26" itemprop="dateModified" datetime="2018-10-28T13:30:26+08:00">2018-10-28</time>
               
             
           </span>
@@ -361,8 +374,7 @@
 
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach 1</p>
-<ul>
+<li>Approach 1<ul>
 <li>Progressive summation<ul>
 <li>Continuously find the sum of the subsequences starting with nums[i]</li>
 <li>Recording the sum of the largest subsequences in the process of seeking</li>
@@ -371,14 +383,15 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity:O($$n^2$$)</li>
 <li>Space complexity:O(1)</li>
-<li>Runtime: 160ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;nums.size();j++)&#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                    maxSum = sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 160ms</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Approach 2</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;nums.size();j++)&#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                    maxSum = sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Approach 2<ul>
 <li>Juddging summation<ul>
 <li>A num adding a negative num will be reduced</li>
 <li>Adding from nums[0], if sum&gt;maxSum, then substitute maxSum</li>
@@ -388,13 +401,13 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity:O(n)</li>
 <li>Space complexity:O(1)</li>
-<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            sum+=nums[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum=sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 8ms</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            sum+=nums[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum=sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -412,6 +425,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -521,9 +540,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -710,7 +727,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -747,6 +764,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 

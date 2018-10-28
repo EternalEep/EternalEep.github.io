@@ -109,13 +109,14 @@
 
 
   <meta name="description" content="Solution 1 Find keynotes reverse phase pervious head: pre_head head node before reverse -&amp;gt; tail node after reverse: modify_list_tail tail node before reverse -&amp;gt; head node after reverse: new_head">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode92-Reverse Linked List II">
 <meta property="og:url" content="http://yoursite.com/2018/09/19/Leetcode92/index.html">
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Solution 1 Find keynotes reverse phase pervious head: pre_head head node before reverse -&amp;gt; tail node after reverse: modify_list_tail tail node before reverse -&amp;gt; head node after reverse: new_head">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T04:27:45.191Z">
+<meta property="og:updated_time" content="2018-10-28T05:29:56.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode92-Reverse Linked List II">
 <meta name="twitter:description" content="Solution 1 Find keynotes reverse phase pervious head: pre_head head node before reverse -&amp;gt; tail node after reverse: modify_list_tail tail node before reverse -&amp;gt; head node after reverse: new_head">
@@ -339,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-22 12:27:45" itemprop="dateModified" datetime="2018-09-22T12:27:45+08:00">2018-09-22</time>
+                <time title="Modified: 2018-10-28 13:29:56" itemprop="dateModified" datetime="2018-10-28T13:29:56+08:00">2018-10-28</time>
               
             
           </span>
@@ -397,11 +398,11 @@
 <li>Complexity Analysis<ul>
 <li>Time Complexity: O(n)</li>
 <li>Space Complexity: O(1)</li>
-<li>Runtime: 0ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode *pre_head = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *result = head;</span><br><span class="line">        <span class="keyword">int</span> cnt_m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// find pre_head</span></span><br><span class="line">        <span class="keyword">while</span> (head &amp;&amp; cnt_m&lt;m<span class="number">-1</span>) &#123;</span><br><span class="line">            pre_head = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            cnt_m++;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *modify_list_tail = head;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        ListNode *p = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (cnt &lt; (n-m+<span class="number">1</span>) ) &#123;</span><br><span class="line">            next = head-&gt;next;</span><br><span class="line">            head-&gt;next = p;</span><br><span class="line">            p = head;</span><br><span class="line">            head = next;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        modify_list_tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">if</span>(pre_head)&#123;</span><br><span class="line">            pre_head-&gt;next = p;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 0ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode *pre_head = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *result = head;</span><br><span class="line">        <span class="keyword">int</span> cnt_m = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// find pre_head</span></span><br><span class="line">        <span class="keyword">while</span> (head &amp;&amp; cnt_m&lt;m<span class="number">-1</span>) &#123;</span><br><span class="line">            pre_head = head;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            cnt_m++;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *modify_list_tail = head;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        ListNode *p = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode *next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (cnt &lt; (n-m+<span class="number">1</span>) ) &#123;</span><br><span class="line">            next = head-&gt;next;</span><br><span class="line">            head-&gt;next = p;</span><br><span class="line">            p = head;</span><br><span class="line">            head = next;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        modify_list_tail-&gt;next = head;</span><br><span class="line">        <span class="keyword">if</span>(pre_head)&#123;</span><br><span class="line">            pre_head-&gt;next = p;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -419,6 +420,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -528,9 +535,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

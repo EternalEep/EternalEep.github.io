@@ -109,13 +109,14 @@
 
 
   <meta name="description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode236-Lowest Common Ancestor of a Binary Tree">
 <meta property="og:url" content="http://yoursite.com/2018/10/10/Leetcode236/index.html">
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T11:20:22.031Z">
+<meta property="og:updated_time" content="2018-10-28T05:31:01.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode236-Lowest Common Ancestor of a Binary Tree">
 <meta name="twitter:description" content="Solution Approach The common Ancestor of two nodes is in the path to the two nodes The lowest Common Ancestor is the node far away from the root and appearing in the two path simutaneously So we calcu">
@@ -322,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-10-10 12:09:19 / Modified: 19:20:22" itemprop="dateCreated datePublished" datetime="2018-10-10T12:09:19+08:00">2018-10-10</time>
+              <time title="Created: 2018-10-10 12:09:19" itemprop="dateCreated datePublished" datetime="2018-10-10T12:09:19+08:00">2018-10-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:01" itemprop="dateModified" datetime="2018-10-28T13:31:01+08:00">2018-10-28</time>
               
             
           </span>
@@ -374,11 +387,11 @@
 </li>
 <li>Complexity Analysis<ul>
 <li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pResult;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qResult;</span><br><span class="line">        <span class="keyword">int</span> finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,p-&gt;val, finish, pPath, pResult);</span><br><span class="line">        finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,q-&gt;val, finish, qPath, qResult);</span><br><span class="line">        <span class="keyword">int</span> pathlen;</span><br><span class="line">        <span class="keyword">if</span>(pResult.size()&lt;qResult.size())&#123;</span><br><span class="line">            pathlen = pResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            pathlen = qResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pathlen;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pResult[i]==qResult[i])&#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pResult[index];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treeNodePath</span><span class="params">(TreeNode* node, <span class="keyword">int</span> val, <span class="keyword">int</span> finish, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; path, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node || finish)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val==val)&#123;</span><br><span class="line">            finish=<span class="number">1</span>;</span><br><span class="line">            result= path;</span><br><span class="line">        &#125;</span><br><span class="line">        treeNodePath(node-&gt;left,val,finish, path, result);</span><br><span class="line">        treeNodePath(node-&gt;right,val,finish, path, result);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space Complexity: O(n)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pResult;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qResult;</span><br><span class="line">        <span class="keyword">int</span> finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,p-&gt;val, finish, pPath, pResult);</span><br><span class="line">        finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,q-&gt;val, finish, qPath, qResult);</span><br><span class="line">        <span class="keyword">int</span> pathlen;</span><br><span class="line">        <span class="keyword">if</span>(pResult.size()&lt;qResult.size())&#123;</span><br><span class="line">            pathlen = pResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            pathlen = qResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pathlen;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pResult[i]==qResult[i])&#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pResult[index];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treeNodePath</span><span class="params">(TreeNode* node, <span class="keyword">int</span> val, <span class="keyword">int</span> finish, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; path, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node || finish)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val==val)&#123;</span><br><span class="line">            finish=<span class="number">1</span>;</span><br><span class="line">            result= path;</span><br><span class="line">        &#125;</span><br><span class="line">        treeNodePath(node-&gt;left,val,finish, path, result);</span><br><span class="line">        treeNodePath(node-&gt;right,val,finish, path, result);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -396,6 +409,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -505,9 +524,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

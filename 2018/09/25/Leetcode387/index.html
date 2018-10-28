@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
+  <meta name="description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis Time complexity: O(n) Space complexity: O(1)">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode387 - First Unique Character in a String">
 <meta property="og:url" content="http://yoursite.com/2018/09/25/Leetcode387/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
+<meta property="og:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis Time complexity: O(n) Space complexity: O(1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T04:29:57.853Z">
+<meta property="og:updated_time" content="2018-10-28T05:30:31.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode387 - First Unique Character in a String">
-<meta name="twitter:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis  Time complexity: O(n) Space complexity: O(1)12">
+<meta name="twitter:description" content="Solution Approach 1 using (cnt[p-‘a’]) to record the alphabet count (cnt[s[i]-‘a’]==1) then return i with s.size(), not cnt.size()   Complexity Analysis Time complexity: O(n) Space complexity: O(1)">
 
 
 
@@ -339,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-27 12:29:57" itemprop="dateModified" datetime="2018-09-27T12:29:57+08:00">2018-09-27</time>
+                <time title="Modified: 2018-10-28 13:30:31" itemprop="dateModified" datetime="2018-10-28T13:30:31+08:00">2018-10-28</time>
               
             
           </span>
@@ -379,25 +380,25 @@
 <li>with s.size(), not cnt.size()</li>
 </ul>
 </li>
-<li><p>Complexity Analysis</p>
-<ul>
+<li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(<span class="number">26</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> p:s)&#123;</span><br><span class="line">            cnt[p-<span class="string">'a'</span>]+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[s[i]-<span class="string">'a'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: O(1)</li>
 </ul>
 </li>
-<li><p>Approach 2</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; cnt(<span class="number">26</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> p:s)&#123;</span><br><span class="line">            cnt[p-<span class="string">'a'</span>]+=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[s[i]-<span class="string">'a'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Approach 2<ul>
 <li>traverse the s</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
 <li>Time complexity: O(n^2)</li>
-<li>Space complexity: O(1)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)&#123;</span><br><span class="line">                b = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!=j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j]==s[i]) &#123;</span><br><span class="line">                        b++;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(!b) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space complexity: O(1)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)&#123;</span><br><span class="line">                b = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!=j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j]==s[i]) &#123;</span><br><span class="line">                        b++;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(!b) <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -415,6 +416,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -524,9 +531,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

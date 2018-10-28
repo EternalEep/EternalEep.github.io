@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms1234">
+  <meta name="description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode350-Intersection of Two Arrays II">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/Leetcode350/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms1234">
+<meta property="og:description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-08T06:00:07.017Z">
+<meta property="og:updated_time" content="2018-10-28T05:30:43.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode350-Intersection of Two Arrays II">
-<meta name="twitter:description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms1234">
+<meta name="twitter:description" content="Solution 1 Traverse traverse nums2, find intersection, push_back and then erase notify to len2-1 each finding loop   Complexity analysis Time complexity: O(n^2) Space complexity: O(n) Runtime: 8ms">
 
 
 
@@ -339,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-08 14:00:07" itemprop="dateModified" datetime="2018-09-08T14:00:07+08:00">2018-09-08</time>
+                <time title="Modified: 2018-10-28 13:30:43" itemprop="dateModified" datetime="2018-10-28T13:30:43+08:00">2018-10-28</time>
               
             
           </span>
@@ -381,11 +382,11 @@
 <li>Complexity analysis<ul>
 <li>Time complexity: O(n^2)</li>
 <li>Space complexity: O(n)</li>
-<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect;</span><br><span class="line">        <span class="keyword">int</span> len2 = nums2.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len2; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums2[i]==num)&#123;</span><br><span class="line">                    intersect.push_back(num);</span><br><span class="line">                    nums2.erase(nums2.begin()+i);</span><br><span class="line">                    len2-=<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> intersect;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 8ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect;</span><br><span class="line">        <span class="keyword">int</span> len2 = nums2.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len2; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums2[i]==num)&#123;</span><br><span class="line">                    intersect.push_back(num);</span><br><span class="line">                    nums2.erase(nums2.begin()+i);</span><br><span class="line">                    len2-=<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> intersect;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><ul>
 <li>iterator <ul>
 <li>using iterator it to find the num, then push_back and erase num</li>
@@ -394,11 +395,11 @@
 <li>Complexity analysis<ul>
 <li>Time complexity: O(n^2)</li>
 <li>Space complexity: O(n)</li>
-<li>Runtime: 4ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums1)&#123;</span><br><span class="line">            it = find(nums2.begin(),nums2.end(),num);</span><br><span class="line">            <span class="keyword">if</span>(it!=nums2.end())&#123;</span><br><span class="line">                intersect.push_back(num);</span><br><span class="line">                nums2.erase(it);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> intersect;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 4ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; intersect;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums1)&#123;</span><br><span class="line">            it = find(nums2.begin(),nums2.end(),num);</span><br><span class="line">            <span class="keyword">if</span>(it!=nums2.end())&#123;</span><br><span class="line">                intersect.push_back(num);</span><br><span class="line">                nums2.erase(it);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> intersect;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -416,6 +417,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -525,9 +532,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

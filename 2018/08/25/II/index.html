@@ -109,13 +109,14 @@
 
 
   <meta name="description" content="Submission 1 Simple one pass If the second num is larger than previous num, add it to profit. Traversing the array from start to end. The total sum we obtain will be the maximum profit. e.g.[1, 7, 2,">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode122-Best Time to Buy and Sell Stock II">
 <meta property="og:url" content="http://yoursite.com/2018/08/25/II/index.html">
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Submission 1 Simple one pass If the second num is larger than previous num, add it to profit. Traversing the array from start to end. The total sum we obtain will be the maximum profit. e.g.[1, 7, 2,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-08T06:13:02.112Z">
+<meta property="og:updated_time" content="2018-10-28T05:31:51.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode122-Best Time to Buy and Sell Stock II">
 <meta name="twitter:description" content="Submission 1 Simple one pass If the second num is larger than previous num, add it to profit. Traversing the array from start to end. The total sum we obtain will be the maximum profit. e.g.[1, 7, 2,">
@@ -339,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-08 14:13:02" itemprop="dateModified" datetime="2018-09-08T14:13:02+08:00">2018-09-08</time>
+                <time title="Modified: 2018-10-28 13:31:51" itemprop="dateModified" datetime="2018-10-28T13:31:51+08:00">2018-10-28</time>
               
             
           </span>
@@ -386,11 +387,11 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
 <li>Space complexity:O(1)</li>
-<li>Runtime: 4ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 4ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> profit=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> peak=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> valley=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;prices.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i+<span class="number">1</span>]&gt;prices[i])&#123;</span><br><span class="line">                peak = prices[i+<span class="number">1</span>];</span><br><span class="line">                valley = prices[i];</span><br><span class="line">                profit+=(peak-valley);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><ul>
 <li>Peak Valley Approach<ul>
 <li>To find the consecutive peak and valley value, something to notify:<ol>
@@ -427,6 +428,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -536,9 +543,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -725,7 +730,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -762,6 +767,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 

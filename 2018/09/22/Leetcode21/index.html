@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+  <meta name="description" content="Solution Approach Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre wi">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode21 - Merge Two Sorted Lists">
 <meta property="og:url" content="http://yoursite.com/2018/09/22/Leetcode21/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta property="og:description" content="Solution Approach Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre wi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T04:27:43.789Z">
+<meta property="og:updated_time" content="2018-10-28T05:31:17.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode21 - Merge Two Sorted Lists">
-<meta name="twitter:description" content="Solution Approach  Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre w">
+<meta name="twitter:description" content="Solution Approach Set temperal head node pre, and save pre l1/l2 is null, then return l2/l1, this is the trick to be considered when l1&amp;amp;l2 is not null, compare l1 value and l2 value connect pre wi">
 
 
 
@@ -322,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-09-22 12:08:53 / Modified: 12:27:43" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
+              <time title="Created: 2018-09-22 12:08:53" itemprop="dateCreated datePublished" datetime="2018-09-22T12:08:53+08:00">2018-09-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:17" itemprop="dateModified" datetime="2018-10-28T13:31:17+08:00">2018-10-28</time>
               
             
           </span>
@@ -361,8 +374,7 @@
 
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach</p>
-<ul>
+<li>Approach<ul>
 <li>Set temperal head node pre, and save pre</li>
 <li>l1/l2 is null, then return l2/l1, this is the trick to be considered</li>
 <li>when l1&amp;l2 is not null, compare l1 value and l2 value<ul>
@@ -375,14 +387,15 @@
 <li>another import tips is that the second judge statement, l1!=nullptr should be added into it. <pre><code>- If the first judge have moved the l1 to nullptr, then l1-&gt;val can not be got. 
 - There are &quot;member access within null pointer of type &apos;struct ListNode&apos;&quot; error
 </code></pre><ul>
-<li>final return pre_save-&gt;next<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
-</li>
+<li>final return pre_save-&gt;next</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Complexity Analysis</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(l1!=<span class="literal">nullptr</span> &amp;&amp; l1-&gt;val&gt;l2-&gt;val)</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(1)</li>
 <li>Runtime: 8ms</li>
@@ -407,6 +420,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -516,9 +535,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

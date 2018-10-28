@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
+  <meta name="description" content="Small heap and Big heap using STL default priority_queue is big_heap  1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using name">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="heap">
 <meta property="og:url" content="http://yoursite.com/2018/10/09/heap/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
+<meta property="og:description" content="Small heap and Big heap using STL default priority_queue is big_heap  1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using name">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-09T09:01:58.293Z">
+<meta property="og:updated_time" content="2018-10-28T05:31:59.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="heap">
-<meta name="twitter:description" content="Small heap and Big heap using STL default priority_queue is big_heap1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using namesp">
+<meta name="twitter:description" content="Small heap and Big heap using STL default priority_queue is big_heap  1234567891011121314151617181920212223242526272829#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;vector&amp;gt;using name">
 
 
 
@@ -322,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-10-09 16:54:51 / Modified: 17:01:58" itemprop="dateCreated datePublished" datetime="2018-10-09T16:54:51+08:00">2018-10-09</time>
+              <time title="Created: 2018-10-09 16:54:51" itemprop="dateCreated datePublished" datetime="2018-10-09T16:54:51+08:00">2018-10-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:59" itemprop="dateModified" datetime="2018-10-28T13:31:59+08:00">2018-10-28</time>
               
             
           </span>
@@ -362,9 +375,9 @@
       
         <ul>
 <li>Small heap and Big heap using STL</li>
-<li>default priority_queue is big_heap<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// small_heap/big_heap realization</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; big_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            greater&lt;<span class="keyword">int</span>&gt; &gt; small_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            less&lt;<span class="keyword">int</span>&gt; &gt; big_heap2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (big_heap.empty())&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"big_heap is empty!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> test[] = &#123;<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">99</span>, <span class="number">4</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)&#123;</span><br><span class="line">        big_heap.push(test[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    big_heap.push(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        big_heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.size = %d\n"</span>, big_heap.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>default priority_queue is big_heap</li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// small_heap/big_heap realization</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; big_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            greater&lt;<span class="keyword">int</span>&gt; &gt; small_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            less&lt;<span class="keyword">int</span>&gt; &gt; big_heap2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (big_heap.empty())&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"big_heap is empty!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> test[] = &#123;<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">99</span>, <span class="number">4</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)&#123;</span><br><span class="line">        big_heap.push(test[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    big_heap.push(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        big_heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.size = %d\n"</span>, big_heap.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -382,6 +395,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+        </div>
       
 
       
@@ -482,9 +501,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

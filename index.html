@@ -479,7 +479,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-28 13:21:46" itemprop="dateModified" datetime="2018-10-28T13:21:46+08:00">2018-10-28</time>
+                <time title="Modified: 2018-10-28 13:31:38" itemprop="dateModified" datetime="2018-10-28T13:31:38+08:00">2018-10-28</time>
               
             
           </span>
@@ -814,7 +814,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-19 14:24:46" itemprop="dateModified" datetime="2018-10-19T14:24:46+08:00">2018-10-19</time>
+                <time title="Modified: 2018-10-28 13:31:29" itemprop="dateModified" datetime="2018-10-28T13:31:29+08:00">2018-10-28</time>
               
             
           </span>
@@ -866,11 +866,11 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity:O(n)</li>
 <li>Space complexity:O(n)</li>
-<li>Runtime:4ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="comment">// len=0 return true</span></span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// right char</span></span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">')'</span>||s[<span class="number">0</span>]==<span class="string">']'</span>||s[<span class="number">0</span>]==<span class="string">'&#125;'</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(s[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">')'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'('</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">']'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'['</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">'&#125;'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'&#123;'</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                st.push(s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(st.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime:4ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="comment">// len=0 return true</span></span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// right char</span></span><br><span class="line">        <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">')'</span>||s[<span class="number">0</span>]==<span class="string">']'</span>||s[<span class="number">0</span>]==<span class="string">'&#125;'</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(s[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">')'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'('</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">']'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'['</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">'&#125;'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!st.empty() &amp;&amp; st.top()==<span class="string">'&#123;'</span>)&#123;</span><br><span class="line">                    st.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                st.push(s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(st.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h2><ul>
 <li>Approach<ul>
 <li>Using <a href="https://www.sczyh30.com/posts/C-C/cpp-stl-hashmap/" target="_blank" rel="noopener">unordered_map</a> stl structure</li>
@@ -881,11 +881,11 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity: O(n)</li>
 <li>Space complexity: O(n)</li>
-<li>Runtime: 0ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>,<span class="keyword">char</span>&gt; hash&#123;&#123;<span class="string">'('</span>,<span class="string">')'</span>&#125;,&#123;<span class="string">'&#123;'</span>,<span class="string">'&#125;'</span>&#125;,&#123;<span class="string">'['</span>,<span class="string">']'</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">'['</span>||s[i]==<span class="string">'&#123;'</span>||s[i]==<span class="string">'('</span>)&#123;</span><br><span class="line">                st.push(s[i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(!st.empty() &amp;&amp; hash[st.top()]==s[i])&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(st.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 0ms</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValid</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>,<span class="keyword">char</span>&gt; hash&#123;&#123;<span class="string">'('</span>,<span class="string">')'</span>&#125;,&#123;<span class="string">'&#123;'</span>,<span class="string">'&#125;'</span>&#125;,&#123;<span class="string">'['</span>,<span class="string">']'</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">'['</span>||s[i]==<span class="string">'&#123;'</span>||s[i]==<span class="string">'('</span>)&#123;</span><br><span class="line">                st.push(s[i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(!st.empty() &amp;&amp; hash[st.top()]==s[i])&#123;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(st.empty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -985,12 +985,24 @@
                 
               
 
-              <time title="Created: 2018-10-17 21:31:59 / Modified: 21:45:11" itemprop="dateCreated datePublished" datetime="2018-10-17T21:31:59+08:00">2018-10-17</time>
+              <time title="Created: 2018-10-17 21:31:59" itemprop="dateCreated datePublished" datetime="2018-10-17T21:31:59+08:00">2018-10-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:30:26" itemprop="dateModified" datetime="2018-10-28T13:30:26+08:00">2018-10-28</time>
               
             
           </span>
@@ -1026,8 +1038,7 @@
         
           
             <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li><p>Approach 1</p>
-<ul>
+<li>Approach 1<ul>
 <li>Progressive summation<ul>
 <li>Continuously find the sum of the subsequences starting with nums[i]</li>
 <li>Recording the sum of the largest subsequences in the process of seeking</li>
@@ -1036,14 +1047,15 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity:O($$n^2$$)</li>
 <li>Space complexity:O(1)</li>
-<li>Runtime: 160ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;nums.size();j++)&#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                    maxSum = sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 160ms</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Approach 2</p>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;nums.size();j++)&#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                    maxSum = sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
+<li>Approach 2<ul>
 <li>Juddging summation<ul>
 <li>A num adding a negative num will be reduced</li>
 <li>Adding from nums[0], if sum&gt;maxSum, then substitute maxSum</li>
@@ -1053,13 +1065,13 @@
 <li>Complexity Analysis<ul>
 <li>Time complexity:O(n)</li>
 <li>Space complexity:O(1)</li>
-<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            sum+=nums[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum=sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Runtime: 8ms</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            sum+=nums[i];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum=sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1159,12 +1171,24 @@
                 
               
 
-              <time title="Created: 2018-10-10 12:09:19 / Modified: 19:20:22" itemprop="dateCreated datePublished" datetime="2018-10-10T12:09:19+08:00">2018-10-10</time>
+              <time title="Created: 2018-10-10 12:09:19" itemprop="dateCreated datePublished" datetime="2018-10-10T12:09:19+08:00">2018-10-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:01" itemprop="dateModified" datetime="2018-10-28T13:31:01+08:00">2018-10-28</time>
               
             
           </span>
@@ -1213,11 +1237,11 @@
 </li>
 <li>Complexity Analysis<ul>
 <li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pResult;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qResult;</span><br><span class="line">        <span class="keyword">int</span> finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,p-&gt;val, finish, pPath, pResult);</span><br><span class="line">        finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,q-&gt;val, finish, qPath, qResult);</span><br><span class="line">        <span class="keyword">int</span> pathlen;</span><br><span class="line">        <span class="keyword">if</span>(pResult.size()&lt;qResult.size())&#123;</span><br><span class="line">            pathlen = pResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            pathlen = qResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pathlen;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pResult[i]==qResult[i])&#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pResult[index];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treeNodePath</span><span class="params">(TreeNode* node, <span class="keyword">int</span> val, <span class="keyword">int</span> finish, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; path, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node || finish)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val==val)&#123;</span><br><span class="line">            finish=<span class="number">1</span>;</span><br><span class="line">            result= path;</span><br><span class="line">        &#125;</span><br><span class="line">        treeNodePath(node-&gt;left,val,finish, path, result);</span><br><span class="line">        treeNodePath(node-&gt;right,val,finish, path, result);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Space Complexity: O(n)</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qPath;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; pResult;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; qResult;</span><br><span class="line">        <span class="keyword">int</span> finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,p-&gt;val, finish, pPath, pResult);</span><br><span class="line">        finish = <span class="number">0</span>;</span><br><span class="line">        treeNodePath(root,q-&gt;val, finish, qPath, qResult);</span><br><span class="line">        <span class="keyword">int</span> pathlen;</span><br><span class="line">        <span class="keyword">if</span>(pResult.size()&lt;qResult.size())&#123;</span><br><span class="line">            pathlen = pResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            pathlen = qResult.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;pathlen;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pResult[i]==qResult[i])&#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pResult[index];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">treeNodePath</span><span class="params">(TreeNode* node, <span class="keyword">int</span> val, <span class="keyword">int</span> finish, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; path, <span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node || finish)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node);</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val==val)&#123;</span><br><span class="line">            finish=<span class="number">1</span>;</span><br><span class="line">            result= path;</span><br><span class="line">        &#125;</span><br><span class="line">        treeNodePath(node-&gt;left,val,finish, path, result);</span><br><span class="line">        treeNodePath(node-&gt;right,val,finish, path, result);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1334,7 +1358,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-10 00:28:00" itemprop="dateModified" datetime="2018-10-10T00:28:00+08:00">2018-10-10</time>
+                <time title="Modified: 2018-10-28 13:31:35" itemprop="dateModified" datetime="2018-10-28T13:31:35+08:00">2018-10-28</time>
               
             
           </span>
@@ -1378,11 +1402,11 @@
 </li>
 <li><a href="https://www.quora.com/What-are-the-time-complexities-of-preorder-inorder-postorder-and-level-order-binary-tree-traversals-with-both-recursive-and-iterative-algorithms" target="_blank" rel="noopener">Complexity Analysis</a><ul>
 <li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(n)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">        <span class="keyword">int</span> path_val = <span class="number">0</span>;</span><br><span class="line">        preorder_pathSum(root,sum,path_val,path,result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">preorder_pathSum</span><span class="params">(TreeNode*node, <span class="keyword">int</span> sum, <span class="keyword">int</span> &amp;path_val, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;path, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node-&gt;val);</span><br><span class="line">        path_val+=node-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;left &amp;&amp; !node-&gt;right &amp;&amp; path_val==sum) &#123;</span><br><span class="line">            result.push_back(path);</span><br><span class="line">        &#125;</span><br><span class="line">        preorder_pathSum(node-&gt;left,sum,path_val,path,result);</span><br><span class="line">        preorder_pathSum(node-&gt;right,sum,path_val,path,result);</span><br><span class="line">        path_val-=node-&gt;val;</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>Space Complexity: O(n)</li>
 </ul>
 </li>
 </ul>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum)&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">        <span class="keyword">int</span> path_val = <span class="number">0</span>;</span><br><span class="line">        preorder_pathSum(root,sum,path_val,path,result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">preorder_pathSum</span><span class="params">(TreeNode*node, <span class="keyword">int</span> sum, <span class="keyword">int</span> &amp;path_val, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;path, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        path.push_back(node-&gt;val);</span><br><span class="line">        path_val+=node-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(!node-&gt;left &amp;&amp; !node-&gt;right &amp;&amp; path_val==sum) &#123;</span><br><span class="line">            result.push_back(path);</span><br><span class="line">        &#125;</span><br><span class="line">        preorder_pathSum(node-&gt;left,sum,path_val,path,result);</span><br><span class="line">        preorder_pathSum(node-&gt;right,sum,path_val,path,result);</span><br><span class="line">        path_val-=node-&gt;val;</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1481,12 +1505,24 @@
                 
               
 
-              <time title="Created: 2018-10-09 16:54:51 / Modified: 17:01:58" itemprop="dateCreated datePublished" datetime="2018-10-09T16:54:51+08:00">2018-10-09</time>
+              <time title="Created: 2018-10-09 16:54:51" itemprop="dateCreated datePublished" datetime="2018-10-09T16:54:51+08:00">2018-10-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:59" itemprop="dateModified" datetime="2018-10-28T13:31:59+08:00">2018-10-28</time>
               
             
           </span>
@@ -1523,9 +1559,9 @@
           
             <ul>
 <li>Small heap and Big heap using STL</li>
-<li>default priority_queue is big_heap<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// small_heap/big_heap realization</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; big_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            greater&lt;<span class="keyword">int</span>&gt; &gt; small_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            less&lt;<span class="keyword">int</span>&gt; &gt; big_heap2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (big_heap.empty())&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"big_heap is empty!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> test[] = &#123;<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">99</span>, <span class="number">4</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)&#123;</span><br><span class="line">        big_heap.push(test[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    big_heap.push(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        big_heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.size = %d\n"</span>, big_heap.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>default priority_queue is big_heap</li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// small_heap/big_heap realization</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; big_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            greater&lt;<span class="keyword">int</span>&gt; &gt; small_heap;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,</span><br><span class="line">            less&lt;<span class="keyword">int</span>&gt; &gt; big_heap2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (big_heap.empty())&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"big_heap is empty!\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> test[] = &#123;<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">99</span>, <span class="number">4</span>, <span class="number">33</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)&#123;</span><br><span class="line">        big_heap.push(test[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    big_heap.push(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        big_heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.top = %d\n"</span>, big_heap.top());</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"big_heap.size = %d\n"</span>, big_heap.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1625,12 +1661,24 @@
                 
               
 
-              <time title="Created: 2018-10-07 15:29:46 / Modified: 15:31:13" itemprop="dateCreated datePublished" datetime="2018-10-07T15:29:46+08:00">2018-10-07</time>
+              <time title="Created: 2018-10-07 15:29:46" itemprop="dateCreated datePublished" datetime="2018-10-07T15:29:46+08:00">2018-10-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:32:02" itemprop="dateModified" datetime="2018-10-28T13:32:02+08:00">2018-10-28</time>
               
             
           </span>
@@ -1770,12 +1818,24 @@
                 
               
 
-              <time title="Created: 2018-10-06 22:05:00 / Modified: 22:25:44" itemprop="dateCreated datePublished" datetime="2018-10-06T22:05:00+08:00">2018-10-06</time>
+              <time title="Created: 2018-10-06 22:05:00" itemprop="dateCreated datePublished" datetime="2018-10-06T22:05:00+08:00">2018-10-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:31:13" itemprop="dateModified" datetime="2018-10-28T13:31:13+08:00">2018-10-28</time>
               
             
           </span>
@@ -1922,9 +1982,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -2091,7 +2149,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -2137,6 +2195,8 @@
       
     
       
+        
+      
     
       
     
@@ -2150,6 +2210,30 @@
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 
