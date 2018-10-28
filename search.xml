@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CodeInterview10-变态跳台阶]]></title>
+    <url>%2F2018%2F10%2F29%2FCodeInterview10%2F</url>
+    <content type="text"><![CDATA[Solution Approach $f(n)=2*f(n-1)$，Formula Derivation Complexity Analysis Time complexity: $O(n)$ Space complexity: $O(2^n)$ Runtime: 3ms 1234567891011121314class Solution &#123;public: int jumpFloorII(int number) &#123; if(number&lt;=0)&#123; return 0; &#125; if(number==1)&#123; return 1; &#125; return 2*jumpFloorII(number-1); &#125;&#125;; No recursion 12345678910111213141516class Solution &#123;public: int jumpFloorII(int number) &#123; if(number==0)&#123; return 0; &#125; if (number==1)&#123; return 1; &#125; int count=1; for(int i=number;i&gt;1;i--)&#123; count = 2*count; &#125; return count; &#125;&#125;;]]></content>
+      <tags>
+        <tag>CodeInterview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Leetcode74-Search a 2D Matrix]]></title>
     <url>%2F2018%2F10%2F27%2FLeetcode74%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Solution Approach 1 Search from matrix[0][0] If target num &lt; matrix[i][j] Change the col index to j (Don’t need to search bottom right corner of the num) Complexity Analysis Time complexity: $O(m*n)$(worst) Space complexity: $O(1)$ Runtime: 8ms 12345678910111213141516171819202122232425class Solution &#123;public: bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123; if(matrix.size()==0)&#123; return false; &#125; int col = matrix[0].size(); for(int i=0;i&lt;matrix.size();i++)&#123; for(int j=0;j&lt;col;j++)&#123; if(target==matrix[i][j])&#123; return true; &#125; if(target&lt;matrix[i][j])&#123; if(j&gt;0)&#123; col = j; &#125; else &#123; return false; &#125; &#125; &#125; &#125; return false; &#125;&#125;; Approach 2 Search from num = matrix[0][col-1] If target&gt;num, row++ Else col– Complexity Analysis Time complexity:$O(m+n)$ Space complexity:$O(1)$ Runtime: 8ms 12345678910111213141516171819202122class Solution &#123;public: bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123; if(matrix.size()==0 || matrix[0].size()==0)&#123; return false; &#125; int row = 0; int col = matrix[0].size()-1; while(row&lt;matrix.size() &amp;&amp; col&gt;=0)&#123; if(target==matrix[row][col])&#123; return true; &#125; if(target&lt;matrix[row][col])&#123; col--; &#125; else&#123; row++; &#125; &#125; return false; &#125;&#125;;]]></content>
       <tags>
         <tag>Leetcode</tag>
       </tags>
@@ -19,7 +27,7 @@
   <entry>
     <title><![CDATA[Leetcode70-Climbing Stairs]]></title>
     <url>%2F2018%2F10%2F19%2FLeetcode70%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Solution Approach 1 Dynamic Programming/Fibonacci Number $Fib(n)=Fib(n-1)+Fib(n-2)$ Broke the problems into subproblems One can reach $i^th$ step in one of the two ways Taking a single step from $(i-1)^th$ step. Taking a step of 2 from $(i-2)^th$ step. So the total number of ways to reach $i^th$ is equal to sum of ways of reaching $(i-1)^th$ step and ways of reaching $(i-1)^th$ step Complexity Analysis Time complexity: $O(n)$ Space complexity: $O(1)$ Runtime: 0ms 1234567891011121314class Solution &#123;public: int climbStairs(int n) &#123; int Stairsone=0; int Stairstwo=1; int count=0; for(int i=0;i&lt;n;i++)&#123; count = Stairsone+Stairstwo; Stairsone = Stairstwo; Stairstwo = count; &#125; return count; &#125;&#125;; Approach 2 We can find $n^th$ fibonacci number using formula in the following code part. Complexity Analysis Time complexity: $O(log(n))$ Space complexity: $O(1)$ Runtime: 0ms 12345678class Solution &#123;public: int climbStairs(int n) &#123; double sqrt5 = sqrt(5); int count = (pow((1+sqrt5)/2,n+1)-pow((1-sqrt5)/2,n+1))/sqrt5; return count; &#125;&#125;;]]></content>
       <tags>
         <tag>Leetcode</tag>
       </tags>

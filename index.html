@@ -277,6 +277,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/CodeInterview10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Weiwen Yi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EternalEep">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/29/CodeInterview10/" itemprop="url">
+                  CodeInterview10-变态跳台阶
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-29 00:17:47 / Modified: 00:24:18" itemprop="dateCreated datePublished" datetime="2018-10-29T00:17:47+08:00">2018-10-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Approach<ul>
+<li>$f(n)=2*f(n-1)$，<a href="https://www.nowcoder.com/questionTerminal/22243d016f6b47f2a6928b4313c85387" target="_blank" rel="noopener">Formula Derivation</a></li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(2^n)$</li>
+<li>Runtime: 3ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jumpFloorII</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(number&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(number==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>*jumpFloorII(number<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>No recursion</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jumpFloorII</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(number==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (number==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=number;i&gt;<span class="number">1</span>;i--)&#123;</span><br><span class="line">            count = <span class="number">2</span>*count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/Leetcode74/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,12 +479,24 @@
                 
               
 
-              <time title="Created: 2018-10-27 13:30:21 / Modified: 13:30:45" itemprop="dateCreated datePublished" datetime="2018-10-27T13:30:21+08:00">2018-10-27</time>
+              <time title="Created: 2018-10-27 13:30:21" itemprop="dateCreated datePublished" datetime="2018-10-27T13:30:21+08:00">2018-10-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-29 00:02:34" itemprop="dateModified" datetime="2018-10-29T00:02:34+08:00">2018-10-29</time>
               
             
           </span>
@@ -363,7 +531,37 @@
       
         
           
-            
+            <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">Solution</a></h2><ul>
+<li>Approach 1<ul>
+<li>Search from matrix[0][0]</li>
+<li>If target num &lt; matrix[i][j]</li>
+<li>Change the col index to j (Don’t need to search bottom right corner of the num)</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(m*n)$(worst)</li>
+<li>Space complexity: $O(1)$</li>
+<li>Runtime: 8ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">searchMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> col = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;matrix.size();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;col;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(target==matrix[i][j])&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(target&lt;matrix[i][j])&#123;</span><br><span class="line">                    <span class="keyword">if</span>(j&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                        col = j;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Approach 2<ul>
+<li>Search from num = matrix[0][col-1]</li>
+<li>If target&gt;num, row++</li>
+<li>Else col–</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity:$O(m+n)$</li>
+<li>Space complexity:$O(1)$</li>
+<li>Runtime: 8ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">searchMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix.size()==<span class="number">0</span> || matrix[<span class="number">0</span>].size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> col = matrix[<span class="number">0</span>].size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(row&lt;matrix.size() &amp;&amp; col&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(target==matrix[row][col])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(target&lt;matrix[row][col])&#123;</span><br><span class="line">                col--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                row++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -663,7 +861,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-27 13:28:15" itemprop="dateModified" datetime="2018-10-27T13:28:15+08:00">2018-10-27</time>
+                <time title="Modified: 2018-10-28 23:51:59" itemprop="dateModified" datetime="2018-10-28T23:51:59+08:00">2018-10-28</time>
               
             
           </span>
@@ -698,7 +896,43 @@
       
         
           
-            
+            <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Approach 1<ul>
+<li>Dynamic Programming/Fibonacci Number<ul>
+<li>$Fib(n)=Fib(n-1)+Fib(n-2)$</li>
+<li>Broke the problems into subproblems</li>
+<li>One can reach $i^th$ step in one of the two ways<ul>
+<li>Taking a single step from $(i-1)^th$ step.</li>
+<li>Taking a step of 2 from $(i-2)^th$ step.</li>
+</ul>
+</li>
+<li>So the total number of ways to reach $i^th$ is equal to sum of ways of reaching $(i-1)^th$ step and ways of reaching $(i-1)^th$ step</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(1)$</li>
+<li>Runtime: 0ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Stairsone=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> Stairstwo=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            count = Stairsone+Stairstwo;</span><br><span class="line">            Stairsone = Stairstwo;</span><br><span class="line">            Stairstwo = count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Approach 2<ul>
+<li>We can find $n^th$ fibonacci number using formula in the following code part.</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(log(n))$</li>
+<li>Space complexity: $O(1)$</li>
+<li>Runtime: 0ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> sqrt5 = <span class="built_in">sqrt</span>(<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">int</span> count = (<span class="built_in">pow</span>((<span class="number">1</span>+sqrt5)/<span class="number">2</span>,n+<span class="number">1</span>)-<span class="built_in">pow</span>((<span class="number">1</span>-sqrt5)/<span class="number">2</span>,n+<span class="number">1</span>))/sqrt5;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1759,167 +1993,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/06/Leetcode215/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Weiwen Yi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EternalEep">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/06/Leetcode215/" itemprop="url">
-                  Leetcode215-Kth Largest Element in an Array
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-10-06 22:05:00" itemprop="dateCreated datePublished" datetime="2018-10-06T22:05:00+08:00">2018-10-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-28 13:31:13" itemprop="dateModified" datetime="2018-10-28T13:31:13+08:00">2018-10-28</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code>- Approach
-    - Maintain a k size min-heap
-    - Guarantee numbers of element equal to k
-    - if numbers of elements is less than k, push it to heap, else if element is larger than heap top, pop heap top and add new element
-    - finally, the top element is the k-th largest number
-- Complexity Analysis
-    - Time Complexity: O(Nlogk)
-    - Space Complexity: O(k)
-    - Runtime: 4ms
-</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; small_heap;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;k)&#123;</span><br><span class="line">            small_heap.push(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;small_heap.top())&#123;</span><br><span class="line">                small_heap.pop();</span><br><span class="line">                small_heap.push(nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> small_heap.top();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1967,7 +2040,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1984,7 +2057,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -2189,15 +2264,15 @@
   
     
       
-    
-      
-    
-      
-    
-      
-    
-      
         
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       

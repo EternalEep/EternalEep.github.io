@@ -108,15 +108,18 @@
 
 
 
-  <meta name="keywords" content="Leetcode">
+  <meta name="description" content="Solution Approach 1 Dynamic Programming/Fibonacci Number $Fib(n)=Fib(n-1)+Fib(n-2)$ Broke the problems into subproblems One can reach $i^th$ step in one of the two ways Taking a single step from $(i-1">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode70-Climbing Stairs">
 <meta property="og:url" content="http://yoursite.com/2018/10/19/Leetcode70/index.html">
 <meta property="og:site_name" content="EternalEep">
+<meta property="og:description" content="Solution Approach 1 Dynamic Programming/Fibonacci Number $Fib(n)=Fib(n-1)+Fib(n-2)$ Broke the problems into subproblems One can reach $i^th$ step in one of the two ways Taking a single step from $(i-1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-27T05:28:15.193Z">
+<meta property="og:updated_time" content="2018-10-28T15:51:59.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode70-Climbing Stairs">
+<meta name="twitter:description" content="Solution Approach 1 Dynamic Programming/Fibonacci Number $Fib(n)=Fib(n-1)+Fib(n-2)$ Broke the problems into subproblems One can reach $i^th$ step in one of the two ways Taking a single step from $(i-1">
 
 
 
@@ -337,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-27 13:28:15" itemprop="dateModified" datetime="2018-10-27T13:28:15+08:00">2018-10-27</time>
+                <time title="Modified: 2018-10-28 23:51:59" itemprop="dateModified" datetime="2018-10-28T23:51:59+08:00">2018-10-28</time>
               
             
           </span>
@@ -370,7 +373,43 @@
       
 
       
-        
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Approach 1<ul>
+<li>Dynamic Programming/Fibonacci Number<ul>
+<li>$Fib(n)=Fib(n-1)+Fib(n-2)$</li>
+<li>Broke the problems into subproblems</li>
+<li>One can reach $i^th$ step in one of the two ways<ul>
+<li>Taking a single step from $(i-1)^th$ step.</li>
+<li>Taking a step of 2 from $(i-2)^th$ step.</li>
+</ul>
+</li>
+<li>So the total number of ways to reach $i^th$ is equal to sum of ways of reaching $(i-1)^th$ step and ways of reaching $(i-1)^th$ step</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(1)$</li>
+<li>Runtime: 0ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Stairsone=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> Stairstwo=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            count = Stairsone+Stairstwo;</span><br><span class="line">            Stairsone = Stairstwo;</span><br><span class="line">            Stairstwo = count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Approach 2<ul>
+<li>We can find $n^th$ fibonacci number using formula in the following code part.</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(log(n))$</li>
+<li>Space complexity: $O(1)$</li>
+<li>Runtime: 0ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> sqrt5 = <span class="built_in">sqrt</span>(<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">int</span> count = (<span class="built_in">pow</span>((<span class="number">1</span>+sqrt5)/<span class="number">2</span>,n+<span class="number">1</span>)-<span class="built_in">pow</span>((<span class="number">1</span>-sqrt5)/<span class="number">2</span>,n+<span class="number">1</span>))/sqrt5;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -460,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -476,7 +524,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -493,7 +541,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -519,6 +569,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -664,7 +730,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -701,6 +767,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 
