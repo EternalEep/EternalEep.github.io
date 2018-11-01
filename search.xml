@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Leetcode217-Contains Duplicate]]></title>
+    <url>%2F2018%2F11%2F02%2FLeetcode217%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode-Easy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode287-Find the Duplicate Number]]></title>
+    <url>%2F2018%2F11%2F02%2FLeetcode287%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode-Medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode90-Subsets II]]></title>
+    <url>%2F2018%2F10%2F30%2FLeetcode90%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode-Medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode315-Count of Smaller Numbers After self]]></title>
+    <url>%2F2018%2F10%2F30%2FLeetcode315%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode-Hard</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode78-Subsets]]></title>
+    <url>%2F2018%2F10%2F29%2FLeetcode78%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Leetcode-Medium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CodeInterview10-变态跳台阶]]></title>
     <url>%2F2018%2F10%2F29%2FCodeInterview10%2F</url>
     <content type="text"><![CDATA[Solution Approach $f(n)=2*f(n-1)$，Formula Derivation Complexity Analysis Time complexity: $O(n)$ Space complexity: $O(2^n)$ Runtime: 3ms 1234567891011121314class Solution &#123;public: int jumpFloorII(int number) &#123; if(number&lt;=0)&#123; return 0; &#125; if(number==1)&#123; return 1; &#125; return 2*jumpFloorII(number-1); &#125;&#125;; No recursion 12345678910111213141516class Solution &#123;public: int jumpFloorII(int number) &#123; if(number==0)&#123; return 0; &#125; if (number==1)&#123; return 1; &#125; int count=1; for(int i=number;i&gt;1;i--)&#123; count = 2*count; &#125; return count; &#125;&#125;;]]></content>
