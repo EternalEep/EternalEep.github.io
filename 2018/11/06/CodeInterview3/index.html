@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)    123456789101112">
-<meta name="keywords" content="Leetcode">
+  <meta name="description" content="Solution Approach ==Loop nums[i]!=i very important! Loop until nums with index i exists nums[i]==. If yes, return true  If no, swap(nums[i],nums[nums[i]]) Pay attention to *duplication usage!   Comple">
+<meta name="keywords" content="CodeInterview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode155 - Min Stack">
-<meta property="og:url" content="http://yoursite.com/2018/10/04/Leetcode155/index.html">
+<meta property="og:title" content="CodeInterview3-数组中重复的数字">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/CodeInterview3/index.html">
 <meta property="og:site_name" content="EternalEep">
-<meta property="og:description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)    123456789101112">
+<meta property="og:description" content="Solution Approach ==Loop nums[i]!=i very important! Loop until nums with index i exists nums[i]==. If yes, return true  If no, swap(nums[i],nums[nums[i]]) Pay attention to *duplication usage!   Comple">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-28T05:31:32.931Z">
+<meta property="og:updated_time" content="2018-11-06T03:26:07.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode155 - Min Stack">
-<meta name="twitter:description" content="Solution Approach using another stack to store the minimum every state getMin() return the min stack top   Complexity Analysis Time complexity: push O(1) Space complexity: push O(n)    123456789101112">
+<meta name="twitter:title" content="CodeInterview3-数组中重复的数字">
+<meta name="twitter:description" content="Solution Approach ==Loop nums[i]!=i very important! Loop until nums with index i exists nums[i]==. If yes, return true  If no, swap(nums[i],nums[nums[i]]) Pay attention to *duplication usage!   Comple">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/04/Leetcode155/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/06/CodeInterview3/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Leetcode155 - Min Stack | EternalEep</title>
+  <title>CodeInterview3-数组中重复的数字 | EternalEep</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/Leetcode155/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/CodeInterview3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weiwen Yi">
@@ -298,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode155 - Min Stack
+          <h1 class="post-title" itemprop="name headline">CodeInterview3-数组中重复的数字
               
             
           </h1>
@@ -323,24 +323,12 @@
                 
               
 
-              <time title="Created: 2018-10-04 00:12:48" itemprop="dateCreated datePublished" datetime="2018-10-04T00:12:48+08:00">2018-10-04</time>
+              <time title="Created: 2018-11-06 00:25:04 / Modified: 11:26:07" itemprop="dateCreated datePublished" datetime="2018-11-06T00:25:04+08:00">2018-11-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-28 13:31:32" itemprop="dateModified" datetime="2018-10-28T13:31:32+08:00">2018-10-28</time>
               
             
           </span>
@@ -375,17 +363,20 @@
       
         <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
 <li>Approach<ul>
-<li>using another stack to store the minimum every state</li>
-<li>getMin() return the min stack top</li>
+<li>==Loop nums[i]!=i very important! Loop until nums with index i exists nums[i]==.</li>
+<li>If yes, return true </li>
+<li>If no, swap(nums[i],nums[nums[i]])</li>
+<li>Pay attention to *duplication usage!</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: push O(1)</li>
-<li>Space complexity: push O(n)</li>
+<li>Time complexity: O(n)</li>
+<li>Space complexity: O(1)</li>
+<li>Runtime: 3ms</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    MinStack() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        _data.push(x);</span><br><span class="line">        <span class="keyword">if</span>(_min.empty())&#123;</span><br><span class="line">            _min.push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> t = _min.top();</span><br><span class="line">            <span class="keyword">if</span>(t&gt;x)&#123;</span><br><span class="line">                _min.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                _min.push(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _data.pop();</span><br><span class="line">        _min.pop();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _data.top();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _min.top();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _data;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; _min;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// Parameters:</span></span><br><span class="line">    <span class="comment">//        numbers:     an array of integers</span></span><br><span class="line">    <span class="comment">//        length:      the length of array numbers</span></span><br><span class="line">    <span class="comment">//        duplication: (Output) the duplicated number in the array number</span></span><br><span class="line">    <span class="comment">// Return value:       true if the input is valid, and there are some duplications in the array number</span></span><br><span class="line">    <span class="comment">//                     otherwise false</span></span><br><span class="line">     <span class="function"><span class="keyword">bool</span> <span class="title">duplicate</span><span class="params">(<span class="keyword">int</span> numbers[], <span class="keyword">int</span> length, <span class="keyword">int</span>* duplication)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(numbers[i]!=i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(numbers[i]==numbers[numbers[i]])&#123;</span><br><span class="line">                *duplication = numbers[i];</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                temp = numbers[numbers[i]];</span><br><span class="line">                numbers[numbers[i]]=numbers[i];</span><br><span class="line">                numbers[i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        *duplication = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -406,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/CodeInterview/" rel="tag"># CodeInterview</a>
           
         </div>
       
@@ -419,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/03/Leetcode232/" rel="next" title="Leetcode232-Implement Queue using Stacks">
-                <i class="fa fa-chevron-left"></i> Leetcode232-Implement Queue using Stacks
+              <a href="/2018/11/02/Leetcode217/" rel="next" title="Leetcode217-Contains Duplicate">
+                <i class="fa fa-chevron-left"></i> Leetcode217-Contains Duplicate
               </a>
             
           </div>
@@ -429,8 +420,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/06/Leetcode215/" rel="prev" title="Leetcode215-Kth Largest Element in an Array">
-                Leetcode215-Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/06/Leetcode40/" rel="prev" title="Leetcode40- Combination Sum II">
+                Leetcode40- Combination Sum II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -713,7 +704,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
 
 
 
@@ -750,6 +741,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
 
