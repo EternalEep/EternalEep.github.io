@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Problem link Solution Problem note   You must not modify the array (assume the array is read only). You must use only constant, O(1) extra space. Your runtime complexity should be less than $O(n^2)$.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-06T09:38:04.991Z">
+<meta property="og:updated_time" content="2018-11-15T02:30:59.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode287-Find the Duplicate Number">
 <meta name="twitter:description" content="Problem link Solution Problem note   You must not modify the array (assume the array is read only). You must use only constant, O(1) extra space. Your runtime complexity should be less than $O(n^2)$.">
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-06 17:38:04" itemprop="dateModified" datetime="2018-11-06T17:38:04+08:00">2018-11-06</time>
+                <time title="Modified: 2018-11-15 10:30:59" itemprop="dateModified" datetime="2018-11-15T10:30:59+08:00">2018-11-15</time>
               
             
           </span>
@@ -380,7 +380,7 @@
 <ol>
 <li>You must not modify the array (assume the array is read only).</li>
 <li>You must use only constant, O(1) extra space.</li>
-<li>Your runtime complexity should be less than <code>$O(n^2)$</code>.</li>
+<li>Your runtime complexity should be less than $O(n^2)$.</li>
 <li>There is only one duplicate number in the array, but it could be repeated more than once.</li>
 </ol>
 <ul>
@@ -393,8 +393,8 @@
 <h3 id="Approach-1-Modify-the-array-Not-satisfied-the-requirments"><a href="#Approach-1-Modify-the-array-Not-satisfied-the-requirments" class="headerlink" title="Approach 1- Modify the array (Not satisfied the requirments)"></a>Approach 1- Modify the array (Not satisfied the requirments)</h3><ul>
 <li>Referring to CodeInterview3-数组中重复的数字 and Leetcode217-Contains Duplicate</li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(1)$</li>
 <li>Runtime: 4ms</li>
 </ul>
 </li>
@@ -406,8 +406,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code></li>
-<li>Space complexity: <code>$O(n)/O(1)$</code><ul>
+<li>Time complexity: $O(nlogn)$</li>
+<li>Space complexity: $O(n)/O(1)$<ul>
 <li>We sort nums in place, so the memory footprint is constant.</li>
 <li>If we cannot modify the input array, then we must allocate linear space for a copy of nums and sort that insead.</li>
 </ul>
@@ -423,11 +423,11 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(n)$</code><ul>
+<li>Time complexity: $O(n)$<ul>
 <li>Set rely on hash tables</li>
 </ul>
 </li>
-<li>Space complexity:<code>$O(n)$</code><ul>
+<li>Space complexity: $O(n)$<ul>
 <li>Set will contain n-1 distinct values</li>
 </ul>
 </li>
@@ -439,11 +439,11 @@
 <h3 id="Approach-4-Floyd’s-Tortoise-and-Hare-Cycle-Detection"><a href="#Approach-4-Floyd’s-Tortoise-and-Hare-Cycle-Detection" class="headerlink" title="Approach 4 - ==Floyd’s Tortoise and Hare (Cycle Detection)=="></a>Approach 4 - ==Floyd’s Tortoise and Hare (Cycle Detection)==</h3><p><a href="https://blog.csdn.net/monkeyduck/article/details/50439840" target="_blank" rel="noopener">Solution-Link1</a><br><a href="https://segmentfault.com/a/1190000003817671#articleHeader18" target="_blank" rel="noopener">Solution-Link2</a><br><a href="https://ask.julyedu.com/question/7299" target="_blank" rel="noopener">Solution-Link3</a></p>
 <ul>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(n)$</code><ul>
+<li>Time complexity: $O(n)$<ul>
 <li>Set rely on hash tables</li>
 </ul>
 </li>
-<li>Space complexity:<code>$O(1)$</code><ul>
+<li>Space complexity: $O(1)$<ul>
 <li>Set will contain n-1 distinct values</li>
 </ul>
 </li>
@@ -465,8 +465,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code></li>
-<li>Space complexity: <code>$O(1)$</code></li>
+<li>Time complexity: $O(nlogn)$</li>
+<li>Space complexity: $O(1)$</li>
 <li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> end = len;</span><br><span class="line">        <span class="keyword">int</span> mid;</span><br><span class="line">        <span class="keyword">int</span> count;</span><br><span class="line">        <span class="keyword">while</span>(start&lt;end) &#123;</span><br><span class="line">            mid = start+(end-start+<span class="number">1</span>)/<span class="number">2</span><span class="number">-1</span>;</span><br><span class="line">            count = countNum(nums, start, mid);</span><br><span class="line">            <span class="keyword">if</span> (count &gt; mid - start + <span class="number">1</span>) &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> start;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countNum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums, <span class="keyword">int</span> start, <span class="keyword">int</span> mid)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;=start &amp;&amp; nums[i]&lt;=mid) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>

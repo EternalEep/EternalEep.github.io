@@ -108,15 +108,18 @@
 
 
 
-  <meta name="keywords" content="Leetcode">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum2(vector&amp;lt;int&amp;gt;&amp;amp; candidates, int target) &amp;#123;        int">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode40- Combination Sum II">
+<meta property="og:title" content="Leetcode40 - Combination Sum II">
 <meta property="og:url" content="http://yoursite.com/2018/11/06/Leetcode40/index.html">
 <meta property="og:site_name" content="EternalEep">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum2(vector&amp;lt;int&amp;gt;&amp;amp; candidates, int target) &amp;#123;        int">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-06T14:15:14.297Z">
+<meta property="og:updated_time" content="2018-11-15T02:43:32.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode40- Combination Sum II">
+<meta name="twitter:title" content="Leetcode40 - Combination Sum II">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; combinationSum2(vector&amp;lt;int&amp;gt;&amp;amp; candidates, int target) &amp;#123;        int">
 
 
 
@@ -133,7 +136,7 @@
   };
 </script>
 
-  <title>Leetcode40- Combination Sum II | EternalEep</title>
+  <title>Leetcode40 - Combination Sum II | EternalEep</title>
   
 
 
@@ -295,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode40- Combination Sum II
+          <h1 class="post-title" itemprop="name headline">Leetcode40 - Combination Sum II
               
             
           </h1>
@@ -320,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-11-06 22:14:27 / Modified: 22:15:14" itemprop="dateCreated datePublished" datetime="2018-11-06T22:14:27+08:00">2018-11-06</time>
+              <time title="Created: 2018-11-06 22:14:27" itemprop="dateCreated datePublished" datetime="2018-11-06T22:14:27+08:00">2018-11-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-15 10:43:32" itemprop="dateModified" datetime="2018-11-15T10:43:32+08:00">2018-11-15</time>
               
             
           </span>
@@ -358,7 +373,8 @@
       
 
       
-        
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combinationSum2(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        sort(candidates.begin(),candidates.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; items;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res_set;</span><br><span class="line">        generator(i,candidates,items,result,res_set,target,sum);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">generator</span><span class="params">(<span class="keyword">int</span> i, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;items,</span></span></span><br><span class="line"><span class="function"><span class="params">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result, <span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;res_set, <span class="keyword">int</span> target, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=candidates.size())&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum&gt;target)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum+=candidates[i];</span><br><span class="line">        items.push_back(candidates[i]);</span><br><span class="line">        <span class="keyword">if</span>(res_set.find(items)==res_set.end()&amp;&amp;sum==target)&#123;</span><br><span class="line">                result.push_back(items);</span><br><span class="line">                res_set.insert(items);</span><br><span class="line">            &#125;</span><br><span class="line">        generator(i+<span class="number">1</span>,candidates,items,result,res_set,target,sum);</span><br><span class="line">        items.pop_back();</span><br><span class="line">        sum -= candidates[i];</span><br><span class="line">        generator(i+<span class="number">1</span>,candidates,items,result,res_set,target,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 

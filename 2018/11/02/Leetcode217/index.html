@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="EternalEep">
 <meta property="og:description" content="Solution The number range is not in [1,n], Attention! Related Topics Leetcode287-Find the Duplicate Number CodeInterview3-数组中重复的数字    Approach 1 - Hash Map Hash Map For self-balancing Binary Search Tr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-06T06:28:16.612Z">
+<meta property="og:updated_time" content="2018-11-15T04:44:14.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode217-Contains Duplicate">
 <meta name="twitter:description" content="Solution The number range is not in [1,n], Attention! Related Topics Leetcode287-Find the Duplicate Number CodeInterview3-数组中重复的数字    Approach 1 - Hash Map Hash Map For self-balancing Binary Search Tr">
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-06 14:28:16" itemprop="dateModified" datetime="2018-11-06T14:28:16+08:00">2018-11-06</time>
+                <time title="Modified: 2018-11-15 12:44:14" itemprop="dateModified" datetime="2018-11-15T12:44:14+08:00">2018-11-15</time>
               
             
           </span>
@@ -383,8 +383,8 @@
 </ul>
 <h3 id="Approach-1-Hash-Map"><a href="#Approach-1-Hash-Map" class="headerlink" title="Approach 1 - Hash Map"></a>Approach 1 - Hash Map</h3><ul>
 <li>Hash Map<ul>
-<li>For self-balancing Binary Search Tree, search and insert are both <code>$O(logn)$</code></li>
-<li>For Hash Map, search and insert are both <code>$O(1)$</code></li>
+<li>For self-balancing Binary Search Tree, search and insert are both $O(logn)$</li>
+<li>For Hash Map, search and insert are both $O(1)$</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
@@ -401,8 +401,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code> for heapsort</li>
-<li>Space complexity: O(1) for heapsort</li>
+<li>Time complexity: $O(nlogn)$ for heapsort</li>
+<li>Space complexity: $O(1)$ for heapsort</li>
 <li>Runtime: 28ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -410,7 +410,7 @@
 </ul>
 <h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ul>
 <li>One should keep in mind that real world performance can be different from what the Big-O notation says. The Big-O notation only tells us that for sufficiently large input, one will be faster than the other. </li>
-<li>Therefore, when nn is not sufficiently large, an <code>$O(n)$</code> algorithm can be slower than an <code>$O(nlogn)$</code> algorithm.</li>
+<li>Therefore, when nn is not sufficiently large, an $O(n)$ algorithm can be slower than an <code>$O(nlogn)$</code> algorithm.</li>
 </ul>
 
       

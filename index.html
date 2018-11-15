@@ -297,7 +297,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2018/11/06/Leetcode40/" itemprop="url">
-                  Leetcode40- Combination Sum II
+                  Leetcode40 - Combination Sum II
                 </a>
               
             
@@ -323,12 +323,24 @@
                 
               
 
-              <time title="Created: 2018-11-06 22:14:27 / Modified: 22:15:14" itemprop="dateCreated datePublished" datetime="2018-11-06T22:14:27+08:00">2018-11-06</time>
+              <time title="Created: 2018-11-06 22:14:27" itemprop="dateCreated datePublished" datetime="2018-11-06T22:14:27+08:00">2018-11-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-15 10:43:32" itemprop="dateModified" datetime="2018-11-15T10:43:32+08:00">2018-11-15</time>
               
             
           </span>
@@ -363,7 +375,8 @@
       
         
           
-            
+            <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combinationSum2(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        sort(candidates.begin(),candidates.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; items;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res_set;</span><br><span class="line">        generator(i,candidates,items,result,res_set,target,sum);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">generator</span><span class="params">(<span class="keyword">int</span> i, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;items,</span></span></span><br><span class="line"><span class="function"><span class="params">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result, <span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;res_set, <span class="keyword">int</span> target, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=candidates.size())&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum&gt;target)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum+=candidates[i];</span><br><span class="line">        items.push_back(candidates[i]);</span><br><span class="line">        <span class="keyword">if</span>(res_set.find(items)==res_set.end()&amp;&amp;sum==target)&#123;</span><br><span class="line">                result.push_back(items);</span><br><span class="line">                res_set.insert(items);</span><br><span class="line">            &#125;</span><br><span class="line">        generator(i+<span class="number">1</span>,candidates,items,result,res_set,target,sum);</span><br><span class="line">        items.pop_back();</span><br><span class="line">        sum -= candidates[i];</span><br><span class="line">        generator(i+<span class="number">1</span>,candidates,items,result,res_set,target,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -462,12 +475,24 @@
                 
               
 
-              <time title="Created: 2018-11-06 00:25:04 / Modified: 11:26:07" itemprop="dateCreated datePublished" datetime="2018-11-06T00:25:04+08:00">2018-11-06</time>
+              <time title="Created: 2018-11-06 00:25:04" itemprop="dateCreated datePublished" datetime="2018-11-06T00:25:04+08:00">2018-11-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-15 10:35:52" itemprop="dateModified" datetime="2018-11-15T10:35:52+08:00">2018-11-15</time>
               
             
           </span>
@@ -504,15 +529,15 @@
           
             <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
 <li>Approach<ul>
-<li>==Loop nums[i]!=i very important! Loop until nums with index i exists nums[i]==.</li>
+<li>Loop nums[i]!=i very important! Loop until nums with index i exists nums[i].</li>
 <li>If yes, return true </li>
 <li>If no, swap(nums[i],nums[nums[i]])</li>
 <li>Pay attention to *duplication usage!</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(1)$</li>
 <li>Runtime: 3ms</li>
 </ul>
 </li>
@@ -634,7 +659,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-06 14:28:16" itemprop="dateModified" datetime="2018-11-06T14:28:16+08:00">2018-11-06</time>
+                <time title="Modified: 2018-11-15 12:44:14" itemprop="dateModified" datetime="2018-11-15T12:44:14+08:00">2018-11-15</time>
               
             
           </span>
@@ -679,8 +704,8 @@
 </ul>
 <h3 id="Approach-1-Hash-Map"><a href="#Approach-1-Hash-Map" class="headerlink" title="Approach 1 - Hash Map"></a>Approach 1 - Hash Map</h3><ul>
 <li>Hash Map<ul>
-<li>For self-balancing Binary Search Tree, search and insert are both <code>$O(logn)$</code></li>
-<li>For Hash Map, search and insert are both <code>$O(1)$</code></li>
+<li>For self-balancing Binary Search Tree, search and insert are both $O(logn)$</li>
+<li>For Hash Map, search and insert are both $O(1)$</li>
 </ul>
 </li>
 <li>Complexity Analysis<ul>
@@ -697,8 +722,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code> for heapsort</li>
-<li>Space complexity: O(1) for heapsort</li>
+<li>Time complexity: $O(nlogn)$ for heapsort</li>
+<li>Space complexity: $O(1)$ for heapsort</li>
 <li>Runtime: 28ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -706,7 +731,7 @@
 </ul>
 <h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ul>
 <li>One should keep in mind that real world performance can be different from what the Big-O notation says. The Big-O notation only tells us that for sufficiently large input, one will be faster than the other. </li>
-<li>Therefore, when nn is not sufficiently large, an <code>$O(n)$</code> algorithm can be slower than an <code>$O(nlogn)$</code> algorithm.</li>
+<li>Therefore, when nn is not sufficiently large, an $O(n)$ algorithm can be slower than an <code>$O(nlogn)$</code> algorithm.</li>
 </ul>
 
           
@@ -824,7 +849,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-06 17:38:04" itemprop="dateModified" datetime="2018-11-06T17:38:04+08:00">2018-11-06</time>
+                <time title="Modified: 2018-11-15 10:30:59" itemprop="dateModified" datetime="2018-11-15T10:30:59+08:00">2018-11-15</time>
               
             
           </span>
@@ -866,7 +891,7 @@
 <ol>
 <li>You must not modify the array (assume the array is read only).</li>
 <li>You must use only constant, O(1) extra space.</li>
-<li>Your runtime complexity should be less than <code>$O(n^2)$</code>.</li>
+<li>Your runtime complexity should be less than $O(n^2)$.</li>
 <li>There is only one duplicate number in the array, but it could be repeated more than once.</li>
 </ol>
 <ul>
@@ -879,8 +904,8 @@
 <h3 id="Approach-1-Modify-the-array-Not-satisfied-the-requirments"><a href="#Approach-1-Modify-the-array-Not-satisfied-the-requirments" class="headerlink" title="Approach 1- Modify the array (Not satisfied the requirments)"></a>Approach 1- Modify the array (Not satisfied the requirments)</h3><ul>
 <li>Referring to CodeInterview3-数组中重复的数字 and Leetcode217-Contains Duplicate</li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: O(n)</li>
-<li>Space complexity: O(1)</li>
+<li>Time complexity: $O(n)$</li>
+<li>Space complexity: $O(1)$</li>
 <li>Runtime: 4ms</li>
 </ul>
 </li>
@@ -892,8 +917,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code></li>
-<li>Space complexity: <code>$O(n)/O(1)$</code><ul>
+<li>Time complexity: $O(nlogn)$</li>
+<li>Space complexity: $O(n)/O(1)$<ul>
 <li>We sort nums in place, so the memory footprint is constant.</li>
 <li>If we cannot modify the input array, then we must allocate linear space for a copy of nums and sort that insead.</li>
 </ul>
@@ -909,11 +934,11 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(n)$</code><ul>
+<li>Time complexity: $O(n)$<ul>
 <li>Set rely on hash tables</li>
 </ul>
 </li>
-<li>Space complexity:<code>$O(n)$</code><ul>
+<li>Space complexity: $O(n)$<ul>
 <li>Set will contain n-1 distinct values</li>
 </ul>
 </li>
@@ -925,11 +950,11 @@
 <h3 id="Approach-4-Floyd’s-Tortoise-and-Hare-Cycle-Detection"><a href="#Approach-4-Floyd’s-Tortoise-and-Hare-Cycle-Detection" class="headerlink" title="Approach 4 - ==Floyd’s Tortoise and Hare (Cycle Detection)=="></a>Approach 4 - ==Floyd’s Tortoise and Hare (Cycle Detection)==</h3><p><a href="https://blog.csdn.net/monkeyduck/article/details/50439840" target="_blank" rel="noopener">Solution-Link1</a><br><a href="https://segmentfault.com/a/1190000003817671#articleHeader18" target="_blank" rel="noopener">Solution-Link2</a><br><a href="https://ask.julyedu.com/question/7299" target="_blank" rel="noopener">Solution-Link3</a></p>
 <ul>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(n)$</code><ul>
+<li>Time complexity: $O(n)$<ul>
 <li>Set rely on hash tables</li>
 </ul>
 </li>
-<li>Space complexity:<code>$O(1)$</code><ul>
+<li>Space complexity: $O(1)$<ul>
 <li>Set will contain n-1 distinct values</li>
 </ul>
 </li>
@@ -951,8 +976,8 @@
 </ul>
 </li>
 <li>Complexity Analysis<ul>
-<li>Time complexity: <code>$O(nlogn)$</code></li>
-<li>Space complexity: <code>$O(1)$</code></li>
+<li>Time complexity: $O(nlogn)$</li>
+<li>Space complexity: $O(1)$</li>
 <li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> end = len;</span><br><span class="line">        <span class="keyword">int</span> mid;</span><br><span class="line">        <span class="keyword">int</span> count;</span><br><span class="line">        <span class="keyword">while</span>(start&lt;end) &#123;</span><br><span class="line">            mid = start+(end-start+<span class="number">1</span>)/<span class="number">2</span><span class="number">-1</span>;</span><br><span class="line">            count = countNum(nums, start, mid);</span><br><span class="line">            <span class="keyword">if</span> (count &gt; mid - start + <span class="number">1</span>) &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> start;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countNum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums, <span class="keyword">int</span> start, <span class="keyword">int</span> mid)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;=start &amp;&amp; nums[i]&lt;=mid) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -1352,7 +1377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-30 11:12:57" itemprop="dateModified" datetime="2018-10-30T11:12:57+08:00">2018-10-30</time>
+                <time title="Modified: 2018-11-15 15:22:23" itemprop="dateModified" datetime="2018-11-15T15:22:23+08:00">2018-11-15</time>
               
             
           </span>
@@ -1387,7 +1412,42 @@
       
         
           
-            
+            <p><a href="http://www.cnblogs.com/grandyang/p/4309345.html" target="_blank" rel="noopener">Link</a></p>
+<h2 id="Solution1-Retrospective-Recursive-method"><a href="#Solution1-Retrospective-Recursive-method" class="headerlink" title="Solution1 - Retrospective/Recursive method"></a>Solution1 - Retrospective/Recursive method</h2><ul>
+<li>Approach<ul>
+<li>Retrospective heuristic</li>
+</ul>
+<ul>
+<li>Whether to choose the element to push into the set</li>
+<li>Choose to push the element, select subsequent element to complete all trial for subsequent elements</li>
+<li>Then pop back this element, select subsequent element to complete all trial for subsequent elements</li>
+</ul>
+</li>
+<li><a href="https://www.jiuzhang.com/qa/1237/" target="_blank" rel="noopener">Complexity Analysis</a><ul>
+<li>Time complexity: $O(n2^n)$</li>
+<li>Space complexity: $O(2^n)$</li>
+<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsets(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; items;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        result.push_back(items);</span><br><span class="line">        generate(<span class="number">0</span>,nums,items,result);</span><br><span class="line">        <span class="keyword">return</span>  result;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">generate</span><span class="params">(<span class="keyword">int</span> i, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;items, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=nums.size())&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        items.push_back(nums[i]);</span><br><span class="line">        result.push_back(items);</span><br><span class="line">        generate(i+<span class="number">1</span>,nums,items,result);</span><br><span class="line">        items.pop_back();</span><br><span class="line">        generate(i+<span class="number">1</span>,nums,items,result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Solution2-Bit-Operation"><a href="#Solution2-Bit-Operation" class="headerlink" title="Solution2 - Bit Operation"></a>Solution2 - Bit Operation</h2><ul>
+<li>Approach<ul>
+<li>100=4 —-&gt; A</li>
+<li>010=2 —-&gt; B</li>
+<li>001=1 —-&gt; C</li>
+<li>2^n categories</li>
+<li>Construct some set, use A,B,C(int)&amp;this set, if true, push into the set</li>
+</ul>
+</li>
+<li>Complexity Analysis<ul>
+<li>Time complexity: $O(n2^n)$</li>
+<li>Space complexity: $O(2^n)$</li>
+<li>Runtime: 8ms<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsets(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="keyword">int</span> all_set = <span class="number">1</span>&lt;&lt;nums.size(); <span class="comment">//2^n</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;all_set;i++)&#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; items;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;nums.size();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i&amp;<span class="number">1</span>&lt;&lt;j)&#123;</span><br><span class="line">                    items.push_back(nums[j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            result.push_back(items);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
           
         
       
